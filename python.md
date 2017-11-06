@@ -11,6 +11,9 @@
 ### 爬虫
 - [python爬虫从入门到放弃系列文章(1~24)](http://www.cnblogs.com/zhaof/category/1007686.html)
 
+### 数据分析
+- [面向程序员的数据挖掘指南](https://www.gitbook.com/book/yourtion/dataminingguide/details)
+
 
 ### 其它
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
