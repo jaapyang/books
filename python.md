@@ -14,6 +14,11 @@
 ### 数据分析
 - [面向程序员的数据挖掘指南](https://www.gitbook.com/book/yourtion/dataminingguide/details)
 
+    >- 如果数据存在“分数膨胀”问题，就使用皮尔逊相关系数。
+    >- 如果数据比较“密集”，变量之间基本都存在公有值，且这些距离数据是非常重要的，那就使用欧几里得或曼哈顿距离。
+    >- 如果数据是稀疏的，则使用余弦相似度。
+
+
 
 ### 其它
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
