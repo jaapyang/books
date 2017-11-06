@@ -14,3 +14,4 @@
 
 ### 其它
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
+- [Python中文学习大本营](http://www.pythondoc.com/)
