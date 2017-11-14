@@ -10,6 +10,7 @@
 
 ### 爬虫
 - [python爬虫从入门到放弃系列文章(1~24)](http://www.cnblogs.com/zhaof/category/1007686.html)
+- [教你分分钟学会用python爬虫框架Scrapy爬取心目中的女神](https://www.cnblogs.com/wanghzh/p/5824181.html)
 
 ### 日志管理
 - [Python 官方文档](https://docs.python.org/2/library/logging.html)
