@@ -11,6 +11,11 @@
 ### 爬虫
 - [python爬虫从入门到放弃系列文章(1~24)](http://www.cnblogs.com/zhaof/category/1007686.html)
 
+### 日志管理
+- [Python 官方文档](https://docs.python.org/2/library/logging.html)
+- [python logging日志模块以及多进程日志](http://www.jianshu.com/p/d615bf01e37b)
+- [python3 logging](https://www.cnblogs.com/Andy963/p/7067460.html)
+
 ### 数据分析
 - [面向程序员的数据挖掘指南](https://www.gitbook.com/book/yourtion/dataminingguide/details)
 
