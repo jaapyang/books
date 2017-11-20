@@ -4,6 +4,7 @@
 - [Django新手图文教程](http://www.cnblogs.com/feixuelove1009/p/5823135.html)
 
     >- [Django之Form、CSRF、cookie和session](http://www.cnblogs.com/feixuelove1009/p/5867288.html)
+    
     >- [Django之Form、CSRF、cookie和session](http://www.cnblogs.com/feixuelove1009/p/5867288.html)
     
 - [django 快速搭建blog](http://www.cnblogs.com/fnng/p/3737964.html)
