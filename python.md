@@ -38,7 +38,8 @@
     >- 如果数据比较“密集”，变量之间基本都存在公有值，且这些距离数据是非常重要的，那就使用欧几里得或曼哈顿距离。
     >- 如果数据是稀疏的，则使用余弦相似度。
 
-
+### 精通Python设计模式
+- [精通Python设计模式](https://github.com/cundi/Mastering.Python.Design.Patterns)
 
 ### 其它
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
