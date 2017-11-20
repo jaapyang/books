@@ -1,4 +1,5 @@
 > Python
+> [Python开发者中文社区](http://www.pythontab.com/)
 
 ### Web开发框架
 - [Django新手图文教程](http://www.cnblogs.com/feixuelove1009/p/5823135.html)
