@@ -2,6 +2,10 @@
 > [Python开发者中文社区](http://www.pythontab.com/)
 
 ### Web开发框架
+
+#### Django
+- [django 快速搭建blog](http://www.cnblogs.com/fnng/p/3737964.html)
+- [Django进阶之CSRF](http://www.cnblogs.com/zhaof/p/6281482.html)
 - [Django新手图文教程](http://www.cnblogs.com/feixuelove1009/p/5823135.html)
 
     >- [Django之Form、CSRF、cookie和session](http://www.cnblogs.com/feixuelove1009/p/5867288.html)
@@ -14,13 +18,11 @@
     >- [Django 1.10 中文文档------3.3.8 会话sessions](http://www.cnblogs.com/feixuelove1009/p/5974521.html)
    
 #### Flask
-
 - [Flask之旅](http://spacewander.github.io/explore-flask-zh/index.html)
 - [Flask 中文手册](http://docs.pythontab.com/flask/flask0.10/)
 
 
-- [django 快速搭建blog](http://www.cnblogs.com/fnng/p/3737964.html)
-- [Django进阶之CSRF](http://www.cnblogs.com/zhaof/p/6281482.html)
+
 
 ### ORM框架
 - [Peewee官方文档](http://docs.peewee-orm.com/en/latest/peewee/quickstart.html)
