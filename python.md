@@ -19,9 +19,7 @@
    
 #### Flask
 - [Flask之旅](http://spacewander.github.io/explore-flask-zh/index.html)
-- [Flask 中文手册](http://docs.pythontab.com/flask/flask0.10/)
-
-
+- [Flask 中文手册](http://docs.pythontab.com/flask/flask0.10)
 
 
 ### ORM框架
