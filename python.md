@@ -9,14 +9,14 @@
 - [Django进阶之CSRF](http://www.cnblogs.com/zhaof/p/6281482.html)
 - [Django新手图文教程](http://www.cnblogs.com/feixuelove1009/p/5823135.html)
 
-    >- [Django之Form、CSRF、cookie和session](http://www.cnblogs.com/feixuelove1009/p/5867288.html)
-    >- [“全能”选手—Django 1.10文档中文版Part1](http://www.cnblogs.com/feixuelove1009/p/5910384.html)
-    >- [“全能”选手—Django 1.10文档中文版Part2](http://www.cnblogs.com/feixuelove1009/p/5922347.html)
-    >- [“全能”选手—Django 1.10文档中文版Part3](http://www.cnblogs.com/feixuelove1009/p/5931445.html)
-    >- [“全能”选手—Django 1.10文档中文版Part4](http://www.cnblogs.com/feixuelove1009/p/5974597.html)
-    >- [Django 1.10 中文文档------3.2.1 模型Models](http://www.cnblogs.com/feixuelove1009/p/5974547.html)
-    >- [Django 1.10 中文文档------3.2.2 查询操作making queries](http://www.cnblogs.com/feixuelove1009/p/6029698.html)
-    >- [Django 1.10 中文文档------3.3.8 会话sessions](http://www.cnblogs.com/feixuelove1009/p/5974521.html)
+    - [Django之Form、CSRF、cookie和session](http://www.cnblogs.com/feixuelove1009/p/5867288.html)
+    - [“全能”选手—Django 1.10文档中文版Part1](http://www.cnblogs.com/feixuelove1009/p/5910384.html)
+    - [“全能”选手—Django 1.10文档中文版Part2](http://www.cnblogs.com/feixuelove1009/p/5922347.html)
+    - [“全能”选手—Django 1.10文档中文版Part3](http://www.cnblogs.com/feixuelove1009/p/5931445.html)
+    - [“全能”选手—Django 1.10文档中文版Part4](http://www.cnblogs.com/feixuelove1009/p/5974597.html)
+    - [Django 1.10 中文文档------3.2.1 模型Models](http://www.cnblogs.com/feixuelove1009/p/5974547.html)
+    - [Django 1.10 中文文档------3.2.2 查询操作making queries](http://www.cnblogs.com/feixuelove1009/p/6029698.html)
+    - [Django 1.10 中文文档------3.3.8 会话sessions](http://www.cnblogs.com/feixuelove1009/p/5974521.html)
     
 #### Flask
 - [Flask之旅](http://spacewander.github.io/explore-flask-zh/index.html)
