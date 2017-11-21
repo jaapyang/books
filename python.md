@@ -1,5 +1,4 @@
-> Python
-> [Python开发者中文社区](http://www.pythontab.com/)
+># [Python开发者中文社区](http://www.pythontab.com/)
 
 ### Web开发框架
 
