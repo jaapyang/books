@@ -52,3 +52,6 @@
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
 - [Python中文学习大本营](http://www.pythondoc.com/)
 - [使用Nginx+Gunicorn+virtualenv+supervisor来部署django项目](https://www.lylinux.org/%E4%BD%BF%E7%94%A8nginxgunicornvirtualenvsupervisor%E6%9D%A5%E9%83%A8%E7%BD%B2django%E9%A1%B9%E7%9B%AE.html)
+
+
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
