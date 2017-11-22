@@ -44,6 +44,9 @@
 ### 精通Python设计模式
 - [精通Python设计模式](https://github.com/cundi/Mastering.Python.Design.Patterns)
 
+### MachineLearning
+- [Kaggle 项目实战（教程） = 文档 + 代码 + 视频](https://github.com/apachecn/kaggle)
+
 ### 其它
 - [Python 量化交易教程](https://wizardforcel.gitbooks.io/python-quant-uqer/content/)
 - [Python中文学习大本营](http://www.pythondoc.com/)
