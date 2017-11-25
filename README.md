@@ -7,5 +7,6 @@
 - [数学相关](math.md)
 - [有趣的知乎文章](zhihu.md)
 - [需求收集](requirements.md)
+- [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
