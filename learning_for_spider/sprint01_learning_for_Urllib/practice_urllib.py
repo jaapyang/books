@@ -10,8 +10,7 @@ urllib.parse url解析模块
 urllib.robotparser robots.txt解析模块
 """
 
-import urllib.request
-import urllib.parse
+from urllib import request, parse
 
 
 def request_for_baidu():
@@ -20,9 +19,16 @@ def request_for_baidu():
     GET请求百度，并获取网页内容
     :return: None
     """
-    response = urllib.request.urlopen('https://www.baidu.com')
+    response = request.urlopen('https://www.baidu.com')
     content = response.read().decode('GBK')
     print(content)
+
+
+def request_with_timeout():
+    try:
+        request.urlopen("http://httpbin.org/get", timeout=0.1)
+    except Exception as e:
+        print(e)
 
 
 def post_with_data():
@@ -53,12 +59,37 @@ def post_with_data():
     }
     """
     url = "http://httpbin.org/post"
-    data = bytes(urllib.parse.urlencode({"word": "hello"}), encoding='utf8')
+    data = bytes(parse.urlencode({"word": "hello"}), encoding='utf8')
     print(data)
-    response = urllib.request.urlopen(url, data=data)
+    response = request.urlopen(url, data=data)
+    print(response.read().decode('utf-8'))
+
+
+def set_request_headers():
+    """
+    设置Headers
+    给请求添加头部信息，从而定制自己请求网站时的头部信息
+
+    有很多网站为了防止程序爬虫爬网站造成网站瘫痪，
+    会需要携带一些headers头部信息才能访问，最长见的有user-agent参数
+    :return:
+    """
+    url = "http://httpbin.org/post"
+    headers = {
+        'User-Agent': 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)',
+        'Host': 'httpbin.org'
+    }
+    dict_parameters = {
+        'name': 'paul'
+    }
+    data = bytes(parse.urlencode(dict_parameters), encoding='utf8')
+    req = request.Request(url=url, data=data, headers=headers, method="POST")
+    response = request.urlopen(req)
     print(response.read().decode('utf-8'))
 
 
 if __name__ == '__main__':
     # request_for_baidu()
-    post_with_data()
+    # post_with_data()
+    # request_with_timeout()
+    set_request_headers()
