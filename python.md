@@ -34,6 +34,7 @@
 - [Python 官方文档](https://docs.python.org/2/library/logging.html)
 - [python logging日志模块以及多进程日志](http://www.jianshu.com/p/d615bf01e37b)
 - [python3 logging](https://www.cnblogs.com/Andy963/p/7067460.html)
+- [Python模块学习——logging](https://www.cnblogs.com/captain_jack/archive/2011/01/21/1941453.html)
 
 ### 数据分析
 - [面向程序员的数据挖掘指南](https://www.gitbook.com/book/yourtion/dataminingguide/details)
