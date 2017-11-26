@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/learning_for_spider$practice_urllib.coverage" NAME="practice_urllib Coverage Results" MODIFIED="1511673187243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sprint01_learning_for_Urllib" />
+    <SUITE FILE_PATH="coverage/learning_for_spider$practice_urllib.coverage" NAME="practice_urllib Coverage Results" MODIFIED="1511682106219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sprint01_learning_for_Urllib" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -27,19 +27,24 @@
       <file leaf-file-name="practice_urllib.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sprint01_learning_for_Urllib/practice_urllib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="19" />
+            <state relative-caret-position="253">
+              <caret line="126" column="27" lean-forward="true" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#46#179#1" expanded="false" />
-                <element signature="e#246#427#0" expanded="false" />
-                <element signature="e#246#308#1" expanded="false" />
-                <element signature="e#462#573#0" expanded="false" />
-                <element signature="e#602#1420#0" expanded="false" />
-                <element signature="e#602#1208#1" expanded="false" />
-                <element signature="e#1454#1597#1" expanded="false" />
-                <element signature="e#1780#1810#0" expanded="false" />
-                <element signature="e#3068#3089#0" expanded="false" />
+                <element signature="e#286#666#0" expanded="false" />
+                <element signature="e#286#419#1" expanded="false" />
+                <element signature="e#698#879#0" expanded="false" />
+                <element signature="e#698#760#1" expanded="false" />
+                <element signature="e#1054#1660#1" expanded="false" />
+                <element signature="e#1906#2049#1" expanded="false" />
+                <element signature="e#2100#2209#0" expanded="false" />
+                <element signature="e#2232#2262#0" expanded="false" />
+                <element signature="e#2525#2627#1" expanded="false" />
+                <element signature="e#2686#2716#0" expanded="false" />
+                <element signature="e#3090#3243#1" expanded="false" />
+                <element signature="e#3285#3374#0" expanded="false" />
+                <element signature="e#3554#3575#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -183,7 +188,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31663975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -224,14 +229,19 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#46#179#1" expanded="false" />
-            <element signature="e#246#427#0" expanded="false" />
-            <element signature="e#246#308#1" expanded="false" />
-            <element signature="e#462#573#0" expanded="false" />
-            <element signature="e#602#1420#0" expanded="false" />
-            <element signature="e#602#1208#1" expanded="false" />
-            <element signature="e#1454#1597#1" expanded="false" />
-            <element signature="e#1780#1810#0" expanded="false" />
-            <element signature="e#3068#3089#0" expanded="false" />
+            <element signature="e#286#666#0" expanded="false" />
+            <element signature="e#286#419#1" expanded="false" />
+            <element signature="e#698#879#0" expanded="false" />
+            <element signature="e#698#760#1" expanded="false" />
+            <element signature="e#1054#1660#1" expanded="false" />
+            <element signature="e#1906#2049#1" expanded="false" />
+            <element signature="e#2100#2209#0" expanded="false" />
+            <element signature="e#2232#2262#0" expanded="false" />
+            <element signature="e#2525#2627#1" expanded="false" />
+            <element signature="e#2686#2716#0" expanded="false" />
+            <element signature="e#3090#3243#1" expanded="false" />
+            <element signature="e#3285#3374#0" expanded="false" />
+            <element signature="e#3554#3575#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -254,19 +264,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sprint01_learning_for_Urllib/practice_urllib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="110" column="19" lean-forward="true" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="19" />
+        <state relative-caret-position="253">
+          <caret line="126" column="27" lean-forward="true" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#46#179#1" expanded="false" />
-            <element signature="e#246#427#0" expanded="false" />
-            <element signature="e#246#308#1" expanded="false" />
-            <element signature="e#462#573#0" expanded="false" />
-            <element signature="e#602#1420#0" expanded="false" />
-            <element signature="e#602#1208#1" expanded="false" />
-            <element signature="e#1454#1597#1" expanded="false" />
-            <element signature="e#1780#1810#0" expanded="false" />
-            <element signature="e#3068#3089#0" expanded="false" />
+            <element signature="e#286#666#0" expanded="false" />
+            <element signature="e#286#419#1" expanded="false" />
+            <element signature="e#698#879#0" expanded="false" />
+            <element signature="e#698#760#1" expanded="false" />
+            <element signature="e#1054#1660#1" expanded="false" />
+            <element signature="e#1906#2049#1" expanded="false" />
+            <element signature="e#2100#2209#0" expanded="false" />
+            <element signature="e#2232#2262#0" expanded="false" />
+            <element signature="e#2525#2627#1" expanded="false" />
+            <element signature="e#2686#2716#0" expanded="false" />
+            <element signature="e#3090#3243#1" expanded="false" />
+            <element signature="e#3285#3374#0" expanded="false" />
+            <element signature="e#3554#3575#0" expanded="false" />
           </folding>
         </state>
       </provider>
