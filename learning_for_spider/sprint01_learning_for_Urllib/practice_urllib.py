@@ -123,6 +123,14 @@ def set_headers_another_way():
     response = request.urlopen(req)
     print(response.read().decode('utf-8'))
 
+def url_parse():
+    result = parse.urlparse("http://www.baidu.com/index.html;user?id=5#comment")
+    print(result)
+
+def url_unpars():
+    data = ["http","www.baidu.com","index.html","user","a=123","comment"]
+    print(parse.urlunparse(data))
+
 
 def request_with_proxy_handler():
     """
@@ -147,4 +155,6 @@ if __name__ == '__main__':
     # set_request_headers()
     # set_headers_another_way()
     # request_with_proxy_handler()
-    request_with_cookie()
+    # request_with_cookie()
+    # url_parse()
+    url_unpars()
