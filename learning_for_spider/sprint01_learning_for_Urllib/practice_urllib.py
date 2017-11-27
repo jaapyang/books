@@ -9,8 +9,25 @@ urllib.error 异常处理模块
 urllib.parse url解析模块
 urllib.robotparser robots.txt解析模块
 """
-
+import http
+from http import cookiejar
 from urllib import request, parse
+
+
+def request_with_cookie():
+    """
+    使用Cookie
+    cookie中保存中我们常见的登录信息，
+    有时候爬取网站需要携带cookie信息访问,这里用到了http.cookijar，
+    用于获取cookie以及存储cookie
+    :return:
+    """
+    cookie = cookiejar.CookieJar()
+    handler = request.HTTPCookieProcessor(cookie)
+    opener = request.build_opener(handler)
+    response = opener.open("http://www.baidu.com")
+    for item in cookie:
+        print(item.name + "=" + item.value)
 
 
 def request_for_baidu():
@@ -88,8 +105,56 @@ def set_request_headers():
     print(response.read().decode('utf-8'))
 
 
+def set_headers_another_way():
+    """
+    添加请求头的第二种方式
+    这种添加方式有个好处是自己可以定义一个请求头字典，然后循环进行添加
+    实测有问题，不知道是不是因为网络不稳定
+    :return:
+    """
+    url = "http://httpbin.org/post"
+    dict_parameters = {
+        'name': 'paul'
+    }
+    data = bytes(parse.urlencode(dict_parameters), encoding='utf8')
+    req = request.Request(url=url, data=data, method='POST')
+    req.add_header('User-Agent', 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)')
+    req.add_header('Host', 'httpbin.org')
+    response = request.urlopen(req)
+    print(response.read().decode('utf-8'))
+
+def url_parse():
+    result = parse.urlparse("http://www.baidu.com/index.html;user?id=5#comment")
+    print(result)
+
+def url_unpars():
+    data = ["http","www.baidu.com","index.html","user","a=123","comment"]
+    print(parse.urlunparse(data))
+
+
+def request_with_proxy_handler():
+    """
+    代理,ProxyHandler
+    通过 urlllib.request.ProxyHandler()可以设置代理,网站它会检测某一段时间某个IP 的访问次数，
+    如果访问次数过多，它会禁止你的访问,所以这个时候需要通过设置代理来爬取数据
+    :return:
+    """
+    proxy_handler = request.ProxyHandler({
+        'http': 'http://127.0.0.1:9743',
+        'https': 'http://127.0.0.1:9743'
+    })
+    opener = request.build_opener(proxy_handler)
+    response = opener.open('http://httpbin.org/get')
+    print(response.read().decode('utf-8'))
+
+
 if __name__ == '__main__':
     # request_for_baidu()
     # post_with_data()
     # request_with_timeout()
-    set_request_headers()
+    # set_request_headers()
+    # set_headers_another_way()
+    # request_with_proxy_handler()
+    # request_with_cookie()
+    # url_parse()
+    url_unpars()
