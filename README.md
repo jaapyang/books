@@ -9,5 +9,6 @@
 - [需求收集](requirements.md)
 - [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
-[![DiLLinger](https://dillinger.io/apple-touch-icon.png)](https://dillinger.io/)
+[![repl.it](https://repl.it/public/images/logo-small.png)](https://repl.it/languages)
+[Markdown在线编辑器](https://dillinger.io/)
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
