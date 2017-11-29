@@ -148,7 +148,7 @@ def request_with_proxy_handler():
     print(response.read().decode('utf-8'))
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # request_for_baidu()
     # post_with_data()
     # request_with_timeout()
@@ -157,4 +157,4 @@ if __name__ == '__main__':
     # request_with_proxy_handler()
     # request_with_cookie()
     # url_parse()
-    url_unpars()
+    # url_unpars()
