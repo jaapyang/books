@@ -9,6 +9,13 @@
 - [需求收集](requirements.md)
 - [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
+
+## [Python](python.md)
+
+- [python 模拟登录相关参考文章](python_fake_login.md)
+
+
+-------
 [![repl.it](https://repl.it/public/images/logo-small.png)](https://repl.it/languages)
 
 [Markdown在线编辑器](https://dillinger.io/)
