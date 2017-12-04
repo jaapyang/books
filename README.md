@@ -16,8 +16,6 @@
 
 
 -------
-[![repl.it](https://repl.it/public/images/logo-small.png)](https://repl.it/languages)
-
-[Markdown在线编辑器](https://dillinger.io/)
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+|         |         |         |
+|:--------|:--------|:--------|
+|[![repl.it](https://repl.it/public/images/logo-small.png)](https://repl.it/languages)|[Markdown在线编辑器](https://dillinger.io/)|[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)|
