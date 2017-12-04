@@ -26,6 +26,7 @@
 - [Peewee官方文档](http://docs.peewee-orm.com/en/latest/peewee/quickstart.html)
 
 ### 爬虫
+- [python requests模拟登录知乎](http://www.cnblogs.com/puyangsky/p/5326384.html)
 - [练习对象使用urllib的靶子网站 ^=^](http://httpbin.org/)
 - [前程无忧 Python 招聘岗位信息爬取和分析](https://github.com/chenjiandongx/51job)
 - [python爬虫从入门到放弃系列文章(1~24)](http://www.cnblogs.com/zhaof/category/1007686.html)
