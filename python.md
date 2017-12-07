@@ -1,5 +1,7 @@
 ># [Python开发者中文社区](http://www.pythontab.com/)
 
+### [Python最佳实践指南](http://pythonguidecn.readthedocs.io/zh/latest/)
+
 ### Web开发框架
 
 #### Django
