@@ -9,6 +9,8 @@
 - [需求收集](requirements.md)
 - [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
+## 编码规范
+- [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 
 ## [Python](python.md)
 
