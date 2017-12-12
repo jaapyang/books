@@ -20,6 +20,7 @@
 
 ## 想做的事
 - 工单系统
+- [OA系统参考](http://www.cnblogs.com/walkingp/archive/2010/08/09/1795527.html)
 
 
 
