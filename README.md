@@ -19,6 +19,7 @@
 - 
 
 ## RabbitMQ
+- [如何优雅的使用RabbitMQ](http://www.cnblogs.com/richieyang/p/5492432.html)
 - [RabbitMQ的几种典型使用场景](https://www.cnblogs.com/luxiaoxun/p/3918054.html)
 - [RabbitMQ主页](https://www.rabbitmq.com/)
 
