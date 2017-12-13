@@ -16,6 +16,11 @@
 ## [Python](python.md)
 
 - [python 模拟登录相关参考文章](python_fake_login.md)
+- 
+
+## RabbitMQ
+- [RabbitMQ的几种典型使用场景](https://www.cnblogs.com/luxiaoxun/p/3918054.html)
+- [RabbitMQ主页](https://www.rabbitmq.com/)
 
 
 ## 想做的事
