@@ -9,3 +9,4 @@
 - [怎样才能从英语很糟糕的人变成英语很厉害的人？](https://www.zhihu.com/question/22808635/answer/258783880)
 - [你有什么网上赚钱的项目或生意愿意分享？](https://www.zhihu.com/question/54399502/answer/259764982)
 - [怎样在大公司混成中层干部?](https://zhuanlan.zhihu.com/p/31340026)
+- [如何制作高水平简历？](https://www.zhihu.com/question/21187514/answer/279653696)
