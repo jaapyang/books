@@ -21,6 +21,9 @@
 - [python 模拟登录相关参考文章](python_fake_login.md)
 - 
 
+## 智能硬件
+- [1、三分钟看懂智能硬件原理——蓝牙防丢器制作教程(包括手机应用)](http://www.cnblogs.com/zjutlitao/p/4625799.html)
+
 ## RabbitMQ
 - [如何优雅的使用RabbitMQ](http://www.cnblogs.com/richieyang/p/5492432.html)
 - [RabbitMQ的几种典型使用场景](https://www.cnblogs.com/luxiaoxun/p/3918054.html)
