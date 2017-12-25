@@ -22,6 +22,7 @@
 #### Flask
 - [Flask之旅](http://spacewander.github.io/explore-flask-zh/index.html)
 - [Flask 中文手册](http://docs.pythontab.com/flask/flask0.10)
+- [使用Flask+MongoDB实现基于REST的接口简单操作](http://www.cnblogs.com/liuzhen1995/p/8107905.html)
 
 
 ### ORM框架
