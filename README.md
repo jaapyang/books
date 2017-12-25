@@ -21,6 +21,9 @@
 - [python 模拟登录相关参考文章](python_fake_login.md)
 - 
 
+## 运营管理
+- [社群运营](https://www.xmind.net/m/ibCh)
+
 ## 智能硬件
 - [1、三分钟看懂智能硬件原理——蓝牙防丢器制作教程(包括手机应用)](http://www.cnblogs.com/zjutlitao/p/4625799.html)
 - [[自己动手玩黑科技]1、小黑科技——如何将普通的家电改造成可以与手机App联动的“智能硬件”](http://www.cnblogs.com/zjutlitao/p/4967847.html)
