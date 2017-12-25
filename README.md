@@ -38,6 +38,10 @@
 
 ## PHP
 - [PHP学习路书](http://www.cnblogs.com/bananaplan/p/The-Right-Way-For-PHPer.html)
+- 
+
+## 安全检测
+- [IBM Security App Scan资料整理](http://www.cnblogs.com/saryli/p/5820605.html)
 
 ## 想做的事
 - 工单系统
