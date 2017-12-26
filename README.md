@@ -51,7 +51,8 @@
 - 工单系统
 - [OA系统参考](http://www.cnblogs.com/walkingp/archive/2010/08/09/1795527.html)
 - 手机扣环+公交卡集成
-- 
+- 以游戏形式，做产品推广
+ > 数据大屏项目
 
 ## 其它文章
 - 社会工程学攻击[常见社工方法以及如何防社工](https://bbs.ichunqiu.com/thread-29654-1-1.html?from=zh)
