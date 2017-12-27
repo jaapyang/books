@@ -14,6 +14,7 @@
 - [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 
 ## C# / C# Core
+- [事件总线知多少](https://www.jianshu.com/p/61042d36b010)
 - [C# 事件总线实现](https://github.com/yanshengjie/EventBus)
 - [ASP.NET Core Web API下事件驱动型架构的实现（一）：一个简单的实现](http://www.cnblogs.com/daxnet/p/8082694.html)   [源代码示例](https://github.com/daxnet/edasample)
 
