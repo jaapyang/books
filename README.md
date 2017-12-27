@@ -31,6 +31,7 @@
 - [智能硬件的设计开发流程是什么样呢？](https://www.zhihu.com/question/27639394)
 
 ## RabbitMQ
+- [RabbitMQ 的行为艺术](http://www.cnblogs.com/liqingwen/p/6412089.html)
 - [如何优雅的使用RabbitMQ](http://www.cnblogs.com/richieyang/p/5492432.html)
 - [RabbitMQ的几种典型使用场景](https://www.cnblogs.com/luxiaoxun/p/3918054.html)
 - [RabbitMQ主页](https://www.rabbitmq.com/)
