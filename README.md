@@ -64,6 +64,7 @@
 ## 其它文章
 - 社会工程学攻击[常见社工方法以及如何防社工](https://bbs.ichunqiu.com/thread-29654-1-1.html?from=zh)
 - [有哪些好的数据来源或者大数据平台？](https://www.zhihu.com/question/27798279/answer/271852252)
+- [程序员应该阅读的非编程类书籍有哪些？](https://github.com/justjavac/free-programming-books-zh_CN/blob/master/what-non-programming-books-should-programmers-read.md)
 
 
 
