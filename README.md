@@ -23,6 +23,10 @@
 - [python 模拟登录相关参考文章](python_fake_login.md)
 - 
 
+## 微信小程序
+- [微信小程序基础入门](http://www.cnblogs.com/micua/p/wechat-weapp-essential.html)
+- 
+
 ## 运营管理
 - [社群运营](https://www.xmind.net/m/ibCh)
 
