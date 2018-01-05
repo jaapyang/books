@@ -25,7 +25,7 @@
 
 ## 微信小程序
 - [微信小程序基础入门](http://www.cnblogs.com/micua/p/wechat-weapp-essential.html)
-- 
+- [案例源代码](https://github.com/jaapyang/weapp-demo)
 
 ## 运营管理
 - [社群运营](https://www.xmind.net/m/ibCh)
