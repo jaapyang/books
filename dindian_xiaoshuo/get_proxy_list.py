@@ -99,17 +99,37 @@ class OpenUrl:
             except:
                 continue
 
-    def request_for_baidu(self, ip, port):
+    def openpage_baidu(self, opener):  # url为相对路径
         try:
-            url = "http://ip.chinaz.com/"
-            proxies = {"http": "http://" + ip + ":" + port}
-            print(proxies)
-            r = requests.get(url=url, proxies=proxies)
-            print(r.content.encode('utf-8'))
+            url = "http://www.baidu.com"
+            result = opener.open(url).read().decode("gb2312")
+            return result.find("京ICP证030173号")
+        except urllib.error.HTTPError as ex:
+            self.mute.release()
+            self.result = "openpage error: %s" % ex
+            return False
+        except ssl.SSLError as ex:
+            self.mute.release()
+            self.result = "openage  error: %s" % ex
+            return False
+
+    def request_for_baidu(self, ip, port):
+        time.sleep(3)
+        try:
+            proxy = urllib.request.ProxyHandler({'http': 'http://' + ip + ':' + port})
+            opener = urllib.request.build_opener(proxy, urllib.request.HTTPHandler)
+            urllib.request.install_opener(opener)
+            print(self.openpage_baidu(opener))
+            return proxy
+            # url = "http://www.baidu.com/"
+            # proxies = {"http": "http://" + ip + ":" + port}
+            # print(proxies)
+            # r = requests.get(url=url, proxies=proxies)
+            # if r.status_code == 200:
+            #     print(r.content.encode('utf-8'))
+            #     return proxies
         except BaseException as e:
             logging.error(e)
-
-        pass
 
     def get_proxy_list(self, content):
         result = []
@@ -134,13 +154,14 @@ class OpenUrl:
         return result
 
     def get_proxy_page(self, url=""):
+        print(url)
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
         }
 
         response = requests.get(url, headers=headers)
         content = response.text.encode('utf-8')
-        print(content)
+        # print(content)
 
         list = self.get_proxy_list(content)
         return list
@@ -149,8 +170,10 @@ class OpenUrl:
 if __name__ == "__main__":
     test = OpenUrl()
     list = []
-    for p in range(1, 10):
-        list += test.get_proxy_page("http://www.xicidaili.com/nn/" + str(p))
+    for p in range(1, 2):
+        list += test.get_proxy_page("http://www.xicidaili.com/wt/" + str(p))
 
     for item in list:
-        test.request_for_baidu(item[1], item[2])
+        result = test.request_for_baidu(item[0], item[1])
+        print("Success:%s" % result)
+        logging.info(result)
