@@ -40,6 +40,7 @@
 - [智能硬件的设计开发流程是什么样呢？](https://www.zhihu.com/question/27639394)
 
 ## RabbitMQ
+- [学习笔记](RabbitMQ.md)
 - [缓存、队列（Memcached、redis、RabbitMQ)](http://www.cnblogs.com/suoning/p/5807247.html)
 - [一个winform带你玩转rabbitMQ](http://www.cnblogs.com/dubing/p/4017613.html)
 - [RabbitMQ 的行为艺术](http://www.cnblogs.com/liqingwen/p/6412089.html)
