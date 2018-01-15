@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using com.BookSpider.DomainService;
 using com.BookSpider.Dtos;
+using com.BookSpider.Model;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -12,9 +14,22 @@ namespace com.BookSpider.App.Handlers.ConsoleHandlers
 {
     class Program
     {
+        private static readonly BookDomainService _bookDomainService;
+
+        static Program()
+        {
+            _bookDomainService = new BookDomainService();
+        }
+
         static void Main(string[] args)
         {
-            var facotry = new ConnectionFactory() { HostName = "localhost" };
+            Send_Chapter_update_task();
+            HandlerRecivedMessage();
+        }
+
+        private static void HandlerRecivedMessage()
+        {
+            var facotry = new ConnectionFactory() {HostName = "localhost"};
 
             using (var connection = facotry.CreateConnection())
             using (var channel = connection.CreateModel())
@@ -43,15 +58,35 @@ namespace com.BookSpider.App.Handlers.ConsoleHandlers
             }
         }
 
+        public static void Send_Chapter_update_task()
+        {
+            // TODO: sent download task to Python
+            var chapterInfoList = _bookDomainService.GetAll().SelectMany(x => x.MenuList).ToList();
+
+            foreach (var menuItemInfo in chapterInfoList)
+            {
+                Console.WriteLine($"{menuItemInfo.Title}\t{menuItemInfo.Url}");
+            }
+        }
+
 
         private static void handler_book_message(string message)
         {
-            var bookInfo = JsonConvert.DeserializeObject<BookInfoDto>(message);
+            var bookInfoDto = JsonConvert.DeserializeObject<BookInfoDto>(message);
 
-            foreach (var menuItemInfo in bookInfo.MenuList.OrderBy(x => x.SortId))
+            var bookInfo = new BookInfo()
             {
-                Console.WriteLine(menuItemInfo.Title);
-            }
+                BookName = bookInfoDto.BookName,
+                MenuUrl = bookInfoDto.MenuUrl,
+                MenuList = bookInfoDto.MenuList.Select(x => new MenuItemInfo
+                {
+                    SortId = x.SortId,
+                    Title = x.Title,
+                    Url = x.Url
+                }).ToList()
+            };
+            
+            _bookDomainService.Add(bookInfo);
         }
     }
 }

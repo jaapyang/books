@@ -48,11 +48,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookDbContext.cs" />
+    <Compile Include="BookDomainService.cs" />
+    <Compile Include="BookRepositoryBase.cs" />
+    <Compile Include="Migrations\201801151317196_Add_BookInfo.cs" />
+    <Compile Include="Migrations\201801151317196_Add_BookInfo.Designer.cs">
+      <DependentUpon>201801151317196_Add_BookInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151331322_Add_Key_Attribute_for_entities.cs" />
+    <Compile Include="Migrations\201801151331322_Add_Key_Attribute_for_entities.Designer.cs">
+      <DependentUpon>201801151331322_Add_Key_Attribute_for_entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151423507_Add_Key_Attribute_for_MenuItem.cs" />
+    <Compile Include="Migrations\201801151423507_Add_Key_Attribute_for_MenuItem.Designer.cs">
+      <DependentUpon>201801151423507_Add_Key_Attribute_for_MenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151425507_set_column_length.cs" />
+    <Compile Include="Migrations\201801151425507_set_column_length.Designer.cs">
+      <DependentUpon>201801151425507_set_column_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801151428117_Add_updatetimes.cs" />
+    <Compile Include="Migrations\201801151428117_Add_updatetimes.Designer.cs">
+      <DependentUpon>201801151428117_Add_updatetimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.BookSpider.Model\com.BookSpider.Model.csproj">
+      <Project>{239220FE-2A9F-4D84-9214-7057E98427F4}</Project>
+      <Name>com.BookSpider.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.miaow.Core.EfRepository\com.miaow.Core.EfRepository.csproj">
+      <Project>{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B}</Project>
+      <Name>com.miaow.Core.EfRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.miaow.Core\com.miaow.Core.csproj">
+      <Project>{524FDBA4-084F-4715-8464-659C678781DB}</Project>
+      <Name>com.miaow.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801151317196_Add_BookInfo.resx">
+      <DependentUpon>201801151317196_Add_BookInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151331322_Add_Key_Attribute_for_entities.resx">
+      <DependentUpon>201801151331322_Add_Key_Attribute_for_entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151423507_Add_Key_Attribute_for_MenuItem.resx">
+      <DependentUpon>201801151423507_Add_Key_Attribute_for_MenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151425507_set_column_length.resx">
+      <DependentUpon>201801151425507_set_column_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801151428117_Add_updatetimes.resx">
+      <DependentUpon>201801151428117_Add_updatetimes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
