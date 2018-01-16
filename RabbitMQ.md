@@ -2,6 +2,7 @@
 
 ### 参考资料
 - [RabbitMq详解](http://www.cnblogs.com/ityouknow/p/6120544.html)
+- [RabbitMQ 官方.NET CORE教程实操演练](https://github.com/yanshengjie/RabbitMQ)
 
 ### 术语解释
 
