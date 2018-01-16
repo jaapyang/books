@@ -7,6 +7,7 @@ using com.miaow.Core.Domain.Entities;
 
 namespace com.BookSpider.Model
 {
+    [Serializable]
     public class MenuItemInfo : Entity,ICreateDateTime,IUpdateDateTime
     {
         public MenuItemInfo()

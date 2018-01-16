@@ -51,10 +51,10 @@ def get_page_html(url):
 
 def parse_list(menu_html):
     """获取小说目录列表"""
+    print(menu_html)
     soup = BeautifulSoup(menu_html)
-    link_body = soup.find(id='at')
-    # print(link_body)
-    link_list = link_body.find_all('a')
+    link_list = soup.find(id='at').find_all('a')
+    print(link_list)
     detail_url_list = []
     for link in link_list:
         c = Charector(link.attrs['href'], link.text)
@@ -88,12 +88,9 @@ if __name__ == '__main__':
 
     """下载小说"""
 
-    LIST_URL = "http://www.23us.so/files/article/html/14/14741/index.html"
-    # input("请输入列表页网址:")
-    file_name = "test"
-    # input("请输入保存的文件名:")
-    start_chapterId = 755
-    # input("请输入起始章节:")
+    LIST_URL = input("请输入列表页网址:")
+    file_name = input("请输入保存的文件名:")
+    start_chapterId = input("请输入起始章节:")
 
     logging.basicConfig(level=logging.INFO,
                         format='%(levelname)s \t %(asctime)s ---------- \n\t%(message)s\n',

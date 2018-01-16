@@ -45,12 +45,15 @@ namespace com.miaow.Core.EfRepository
 
         public override void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void Update(TPrimaryKey key, Action<TEntity> updateAction)
         {
-            throw new NotImplementedException();
+            var item = Table.FirstOrDefault(x => x.Id.Equals(key));
+            if (item == null) return;
+            updateAction(item);
+            dbContext.SaveChanges();
         }
 
         public override void Delete(TEntity entity)

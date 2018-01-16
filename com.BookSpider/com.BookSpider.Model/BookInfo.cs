@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using com.miaow.Core.Domain.Entities;
 
 namespace com.BookSpider.Model
 {
+    [Serializable]
     public class BookInfo : Entity, IRootEntity
     {
         [StringLength(200)]
