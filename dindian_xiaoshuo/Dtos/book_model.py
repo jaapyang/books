@@ -4,19 +4,15 @@ import datetime
 
 
 class ChapterInfo:
-    def __init__(self,
-                 source_link,
-                 chapter_title,
-                 chapter_content, chapter_sortId=0, book_name=None):
-        self.BookName = book_name
-        self.ChapterSortId = chapter_sortId
-        self.ChapterTitle = chapter_title
-        self.SourceLink = source_link
-        self.ChapterContent = chapter_content
-        # self.UpdatedTime = datetime.now().strftime('%Y-%m-%d')
+    def __init__(self, url, chapter_id, content, title="", sort_id=0):
+        self.Url = url
+        self.Id = chapter_id
+        self.SortId = sort_id
+        self.Title = title
+        self.Content = content
 
 
-class MenuItemInfo():
+class MenuItemInfo:
     def __init__(self, url, title, sortId):
         self.Url = url
         self.SortId = sortId
