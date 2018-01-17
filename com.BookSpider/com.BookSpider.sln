@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.BookSpider.App.Handlers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.miaow.Core.EfRepository", "com.miaow.Core.EfRepository\com.miaow.Core.EfRepository.csproj", "{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{EB4B9350-B6E1-4DBE-AF7E-BE575369473B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.BookSpider.App.BookFormApp", "com.BookSpider.App.BookFormApp\com.BookSpider.App.BookFormApp.csproj", "{9644119E-7E16-413F-B383-37376482790F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.miaow.Core.Queues", "com.miaow.Core.Queues\com.miaow.Core.Queues.csproj", "{4B0A36B6-36F6-42F2-B8EB-620F82614444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,13 +53,24 @@ Global
 		{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9644119E-7E16-413F-B383-37376482790F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9644119E-7E16-413F-B383-37376482790F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9644119E-7E16-413F-B383-37376482790F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9644119E-7E16-413F-B383-37376482790F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B0A36B6-36F6-42F2-B8EB-620F82614444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B0A36B6-36F6-42F2-B8EB-620F82614444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B0A36B6-36F6-42F2-B8EB-620F82614444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B0A36B6-36F6-42F2-B8EB-620F82614444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{524FDBA4-084F-4715-8464-659C678781DB} = {7559DEDC-F3CA-4B1E-BE86-9AB86A0DBE8D}
+		{0065EEAE-1827-45AA-89C0-49A1F6B9472B} = {EB4B9350-B6E1-4DBE-AF7E-BE575369473B}
 		{60B5EDA5-AAC7-4BF9-9053-D51508B6E99B} = {7559DEDC-F3CA-4B1E-BE86-9AB86A0DBE8D}
+		{9644119E-7E16-413F-B383-37376482790F} = {EB4B9350-B6E1-4DBE-AF7E-BE575369473B}
+		{4B0A36B6-36F6-42F2-B8EB-620F82614444} = {7559DEDC-F3CA-4B1E-BE86-9AB86A0DBE8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E4C2EB0-3033-421F-AB26-A46DD659FCF7}

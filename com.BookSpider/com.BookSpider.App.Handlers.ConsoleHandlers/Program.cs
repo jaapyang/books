@@ -26,13 +26,64 @@ namespace com.BookSpider.App.Handlers.ConsoleHandlers
 
         static void Main(string[] args)
         {
-            Console.WriteLine(@"start....");
-            const string hostName = "localhost";
-            HandlerRecivedMessage(hostName, "save_chapter", HnadlerChapterMessage);
+            //Console.WriteLine(@"start....");
+            //const string hostName = "localhost";
+            //HandlerRecivedMessage(hostName, "save_chapter", HnadlerChapterMessage);
             //Send_Chapter_update_task();
             //HandlerRecived_BookInfo_Message();
 
+            string hostName = "localhost";
+            string queueName = "save_chapter";
+
+            bool isDurable = true;
+            bool isExclusive = false;
+
+            bool autoDelete = false;
+
+            recive_work_queue(hostName,queueName,isDurable,isExclusive,autoDelete);
             Console.Read();
+        }
+
+        private static void recive_work_queue(string hostName, string queueName, bool isDurable, bool isExclusive, bool autoDelete,
+            bool global = false, ushort prefetchCount = 1, uint prefetchSize = 0, IDictionary<string, object> arguments = null)
+        {
+            var factory = new ConnectionFactory() { HostName = hostName };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: queueName,
+                    durable: isDurable,
+                    exclusive: isExclusive,
+                    autoDelete: autoDelete,
+                    arguments: arguments);
+                channel.BasicQos(prefetchSize: prefetchSize, prefetchCount: prefetchCount, global: @global);
+                Console.WriteLine(" [x] waiting for messages.");
+
+                var consumer = new EventingBasicConsumer(channel);
+                consumer.Received += (o, e) =>
+                {
+                    var body = e.Body;
+                    var message = Encoding.UTF8.GetString(body);
+
+                    var chapterInfo = JsonConvert.DeserializeObject<MenuItemInfoDto>(message);
+                    Console.WriteLine($"{chapterInfo.Id}/{chapterInfo.Title}");
+                    
+                    _menuItemDomainService.Update(x=>x.Id == chapterInfo.Id, x =>
+                    {
+                        x.Context = chapterInfo.Content;
+                        x.LastUpdateTime = DateTime.Now;
+                    });
+
+                    Console.WriteLine("已经更新章节:{0}", chapterInfo.Id);
+
+                    channel.BasicAck(deliveryTag: e.DeliveryTag, multiple: false);
+                };
+
+                channel.BasicConsume(queue: queueName, autoAck: false, consumer: consumer);
+
+                Console.WriteLine(" [x] Press [Enter] to exit.");
+                Console.ReadLine();
+            }
         }
 
         private static void HnadlerChapterMessage(object o, BasicDeliverEventArgs e)
@@ -45,7 +96,7 @@ namespace com.BookSpider.App.Handlers.ConsoleHandlers
             var menuItem = _menuItemDomainService.GetAll().FirstOrDefault(x => x.Id == chapterInfo.Id);
             if (menuItem == null || !string.IsNullOrEmpty(chapterInfo.Content)) return;
 
-            _menuItemDomainService.Update(menuItem.Id, x =>
+            _menuItemDomainService.Update(x=>x.Id == menuItem.Id, x =>
             {
                 x.Context = menuItem.Context;
                 x.LastUpdateTime = DateTime.Now;

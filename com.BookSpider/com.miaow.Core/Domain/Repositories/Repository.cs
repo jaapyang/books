@@ -14,7 +14,7 @@ namespace com.miaow.Core.Domain.Repositories
         public abstract void AddRange(IEnumerable<TEntity> list);
 
         public abstract void Update(TEntity entity);
-        public abstract void Update(TPrimaryKey key, Action<TEntity> updateAction);
+        public abstract void Update(Func<TEntity, bool> filterPridecate, Action<TEntity> updateAction);
 
         public abstract void Delete(TEntity entity);
         public abstract void Delete(Func<TEntity, bool> pridecate);

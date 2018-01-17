@@ -48,9 +48,9 @@ namespace com.miaow.Core.EfRepository
             
         }
 
-        public override void Update(TPrimaryKey key, Action<TEntity> updateAction)
+        public override void Update(Func<TEntity,bool> filterPridecate, Action<TEntity> updateAction)
         {
-            var item = Table.FirstOrDefault(x => x.Id.Equals(key));
+            var item = Table.FirstOrDefault(filterPridecate);
             if (item == null) return;
             updateAction(item);
             dbContext.SaveChanges();

@@ -1,14 +1,18 @@
 #! /usr/bin/env python3
 # -*-coding:utf-8-*-
 import json
+import logging
 import sys
 
+import os
 import requests
 
 from Dtos.book_model import ChapterInfo
 from Handlers.book_download_handler import BookDownLoadHandler
 from rabbit_sender import RabbitMqMessageHandler
 
+
+SAVE_DIR = 'D:\\download_books'
 
 def TestFor_pars_dic():
     dic = [{'Title': '第一千两百二十二章 心情不好', 'SortId': 1878, 'Id': 8009,
@@ -74,5 +78,17 @@ if __name__ == '__main__':
     # print(book_info)
 
     """测试接收章节下载任务"""
+
+    logging.basicConfig(level=logging.INFO,
+                        format='%(levelname)s \t %(asctime)s ---------- \n\t%(message)s\n',
+                        datefmt='%a, %d %b %Y %H:%M:%S',
+                        filename=os.path.join(SAVE_DIR, 'log', 'ttt123.log'),
+                        filemode='w')
+
+    bookHandler = BookDownLoadHandler()
     RabbitMqMessageHandler.receive_message(host="localhost",
-                                           queue_name="download_chapter")
+                                           queue_name="download_chapter",
+                                           callback=bookHandler.receive_menu_download_callback)
+    # RabbitMqMessageHandler.receive_message(host="localhost",
+    #                                        queue_name="parse_menu_html",
+    #                                        callback=bookHandler.receive_book_html_parse_callback)
