@@ -55,10 +55,10 @@ def get_page_html(url):
 
 def parse_list(menu_html):
     """获取小说目录列表"""
-    print(menu_html)
+    # print(menu_html)
     soup = BeautifulSoup(menu_html)
     link_list = soup.find(id='at').find_all('a')
-    print(link_list)
+    # print(link_list)
     detail_url_list = []
     for link in link_list:
         c = Charector(link.attrs['href'], link.text)
@@ -79,7 +79,8 @@ def read_txt_content_by_line(path):
     with open(path, 'r', encoding='utf-8') as f:
         return f.readlines()
 
-def receive_book_html_parse_callback(ch,method,propertyies,body):
+
+def receive_book_html_parse_callback(ch, method, propertyies, body):
     print("received book_html....")
 
     message_content = str(body, encoding='utf-8')
@@ -87,6 +88,13 @@ def receive_book_html_parse_callback(ch,method,propertyies,body):
 
     file_name = input("请输入保存的文件名:")
     start_chapterId = input("请输入起始章节:")
+
+    logging.basicConfig(level=logging.INFO,
+                        format='%(levelname)s \t %(asctime)s ---------- \n\t%(message)s\n',
+                        datefmt='%a, %d %b %Y %H:%M:%S',
+                        filename=os.path.join(SAVE_DIR, 'log', file_name + '.log'),
+                        filemode='w')
+
     with open(os.path.join(SAVE_DIR, file_name + '.txt'), 'w', encoding='utf-8') as f:
         index = 0
         chapter_id = 1
@@ -121,7 +129,6 @@ def receive_book_html_parse_callback(ch,method,propertyies,body):
     input("下载结束，请手动关闭.....")
 
 
-
 if __name__ == '__main__':
     """测试动态代理"""
     # content = get_page_html("http://httpbin.org/headers")
@@ -135,13 +142,6 @@ if __name__ == '__main__':
     """下载小说"""
 
     # LIST_URL = input("请输入列表页网址:")
-
-
-    logging.basicConfig(level=logging.INFO,
-                        format='%(levelname)s \t %(asctime)s ---------- \n\t%(message)s\n',
-                        datefmt='%a, %d %b %Y %H:%M:%S',
-                        filename=os.path.join(SAVE_DIR, 'log', 'tttttt111.log'),
-                        filemode='w')
 
     RabbitMqMessageHandler.receive_message(host="localhost",
                                            queue_name="parse_menu_html",
