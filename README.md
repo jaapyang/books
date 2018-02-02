@@ -14,6 +14,8 @@
 - [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 
 ## C# / C# Core
+- [C#如何以管理员身份运行程序](http://www.cnblogs.com/babycool/p/3569183.html)
+- [C#程序调用cmd执行命令](https://www.cnblogs.com/babycool/p/3570648.html)
 - [Entity Framework - Second Level Caching with DbContext](https://www.codeproject.com/Articles/435142/Entity-Framework-Second-Level-Caching-with-DbConte)
 - [T4](http://www.cnblogs.com/leftfist/p/4257924.html)
 - [一个演示.NET企业应用开发技术以及领域驱动设计的案例代码，业务背景是一个简单的在线零售系统。](https://github.com/daxnet/ByteartRetail)
