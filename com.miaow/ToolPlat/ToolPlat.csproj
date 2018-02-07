@@ -35,6 +35,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NSoup.Standard, Version=2.0.0.1, Culture=neutral, PublicKeyToken=c28d5e68e3f0d5eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSoup.Standard.2.0.1\lib\netstandard2.0\NSoup.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,7 +53,7 @@
   <ItemGroup>
     <Compile Include="HandlerArgs.cs" />
     <Compile Include="HandlerBase.cs" />
-    <Compile Include="Handlers\MenuHandler.cs" />
+    <Compile Include="Handlers\BiQuGeXiaoShuoHandler.cs" />
     <Compile Include="Handlers\SampleHandler.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -89,7 +92,7 @@
     <Content Include="Scripts\respond.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Menu.html">
+    <Content Include="Views\BiQuGeXiaoShuo.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Sample.html">
