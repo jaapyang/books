@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="../Css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span>
+                Menu Url:<input type="text" class="__menu_url" />
+                <a class="btn btn-info __menu_parse" href="javascript:;">开始解析</a>
+            </span>
+        </div>
+        <div class="row">
+            <table class="table __menu_list">
+               
+            </table>
+        </div>
+    </div>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/Json-2.js"></script>
+    <script src="../Scripts/InvokeMethod.js"></script>
+    <script type="text/javascript">
+
+        function loadMenu(args) {
+            
+            var menuList = JSON.parse(args);
+            var menuTable = $('.__menu_list');
+            for (var i = 0; i < menuList.length; i++) {
+                $(menuTable).append("<tr>" +
+                    "<td><input type='checkbox' value='" + menuList[i].Url + "'/></td>" +
+                    "<td><a href='" + menuList[i].Url + "'>" + menuList[i].Title + "</a></td>" +
+                    "</tr>");
+            }
+        }
+
+        $(function () {
+            $('body')
+                .on('click',
+                '.__menu_parse',
+                function () {
+                    var url = $('.__menu_url').val();
+                    Invoke("Parse_Menu_Url", url);
+                });
+        })
+    </script>
+</body>
+</html>

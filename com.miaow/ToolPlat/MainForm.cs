@@ -17,26 +17,23 @@ namespace ToolPlat
 {
     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public partial class MainForm : Form,IWebBowserForm
+    public partial class MainForm : Form, IWebBowserForm
     {
         public string CurrentToolName { get; set; }
 
-        public WebBrowser WebBrowser
-        {
-            get { return this._webBrowser; }
-        }
+        public WebBrowser WebBrowser => this._webBrowser;
         
-
         public MainForm()
         {
             InitializeComponent();
 
             this.treeView_Tools.Nodes.Add("Tools");
-            
+
             this.Load += MainForm_Load;
             this.treeView_Tools.AfterSelect += TreeView_Tools_AfterSelect;
 
             this._webBrowser.ObjectForScripting = this;
+            this.treeView_Tools.HideSelection = false;
             ToolMapping.Init();
         }
 
@@ -62,7 +59,7 @@ namespace ToolPlat
 
             var t = Type.GetType(ToolMapping.GetViewPath(this.CurrentToolName).HandlerFullName);
             var handler = Activator.CreateInstance(t ?? throw new InvalidOperationException($"未找到{CurrentToolName}Handler."), this);
-            t.GetMethod(handlerArgs.MethodName)?.Invoke(handler, new [] {handlerArgs.ArgsJsonStr});
+            t.GetMethod(handlerArgs.MethodName)?.Invoke(handler, new[] { handlerArgs.ArgsJsonStr });
         }
 
     }
