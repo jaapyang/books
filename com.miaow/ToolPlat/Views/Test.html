@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="../Css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <a href="javascript:;" class="btn btn-sm btn-info __btn_test">Test</a>
+        </div>
+    </div>
+
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/Json-2.js"></script>
+    <script src="../Scripts/InvokeMethod.js"></script>
+    <script type="text/javascript">
+
+        function sayHello(args) {
+            alert(args);
+        }
+
+        $(function() {
+            $('body')
+                .on('click',
+                    '.__btn_test',
+                    function() {
+                        Invoke("ShowMessage", "hello world!");
+                    });
+        })
+    </script>
+</body>
+</html>
