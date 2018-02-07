@@ -63,6 +63,7 @@ def parse_list(menu_html):
     for link in link_list:
         c = Charector(link.attrs['href'], link.text)
         detail_url_list.append(c)
+    # print(str(len(detail_url_list)))
     return detail_url_list
 
 
