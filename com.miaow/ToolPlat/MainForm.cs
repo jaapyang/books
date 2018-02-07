@@ -55,11 +55,20 @@ namespace ToolPlat
 
         public void HandlerProcess(string handlerArgsStr)
         {
-            var handlerArgs = JsonConvert.DeserializeObject<HandlerArgs>(handlerArgsStr);
+            try
+            {
+                var handlerArgs = JsonConvert.DeserializeObject<HandlerArgs>(handlerArgsStr);
 
-            var t = Type.GetType(ToolMapping.GetViewPath(this.CurrentToolName).HandlerFullName);
-            var handler = Activator.CreateInstance(t ?? throw new InvalidOperationException($"未找到{CurrentToolName}Handler."), this);
-            t.GetMethod(handlerArgs.MethodName)?.Invoke(handler, new[] { handlerArgs.ArgsJsonStr });
+                var t = Type.GetType(ToolMapping.GetViewPath(this.CurrentToolName).HandlerFullName);
+                var handler =
+                    Activator.CreateInstance(t ?? throw new InvalidOperationException($"未找到{CurrentToolName}Handler."),
+                        this);
+                t.GetMethod(handlerArgs.MethodName)?.Invoke(handler, new[] {handlerArgs.ArgsJsonStr});
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
