@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace ToolPlat.Handlers
 {
-    public sealed class TestHandler:HandlerBase
+    public sealed class SampleHandler:HandlerBase
     {
-        public TestHandler(IWebBowserForm parentBowserForm) : base(parentBowserForm)
+        public SampleHandler(IWebBowserForm parentBowserForm) : base(parentBowserForm)
         {
         }
         

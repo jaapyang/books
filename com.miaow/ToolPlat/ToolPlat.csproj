@@ -50,7 +50,8 @@
   <ItemGroup>
     <Compile Include="HandlerArgs.cs" />
     <Compile Include="HandlerBase.cs" />
-    <Compile Include="Handlers\TestHandler.cs" />
+    <Compile Include="Handlers\MenuHandler.cs" />
+    <Compile Include="Handlers\SampleHandler.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +89,10 @@
     <Content Include="Scripts\respond.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Test.html">
+    <Content Include="Views\Menu.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Sample.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
