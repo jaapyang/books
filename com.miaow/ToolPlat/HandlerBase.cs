@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ToolPlat
@@ -17,12 +18,21 @@ namespace ToolPlat
 
         protected virtual void InvokeScriptFunction(string functionName, string argsJsonStr)
         {
-            Document.InvokeScript(functionName, new[] {argsJsonStr});
+            ParentForm.WebBrowser.Invoke(new Action(() =>
+            {
+                Document.InvokeScript(functionName, new[] { argsJsonStr });
+            }));
+        }
+
+        protected virtual void InvokeScriptFunction(Action action)
+        {
+            ParentForm.WebBrowser.Invoke(action);
         }
     }
 
     public interface IWebBowserForm
     {
         WebBrowser WebBrowser { get; }
+        string Text { get; set; }
     }
 }

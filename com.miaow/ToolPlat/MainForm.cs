@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -31,10 +32,21 @@ namespace ToolPlat
 
             this.Load += MainForm_Load;
             this.treeView_Tools.AfterSelect += TreeView_Tools_AfterSelect;
+            PublicMessage.MessageChanged += PublicMessage_MessageChanged;
 
             this._webBrowser.ObjectForScripting = this;
             this.treeView_Tools.HideSelection = false;
             ToolMapping.Init();
+        }
+
+        private void PublicMessage_MessageChanged(object sender, EventArgs e)
+        {
+            Control.CheckForIllegalCrossThreadCalls = false;
+            Thread t = new Thread(() =>
+            {
+                this.Text = PublicMessage.Message;
+            });
+            t.Start();
         }
 
         private void TreeView_Tools_AfterSelect(object sender, TreeViewEventArgs e)

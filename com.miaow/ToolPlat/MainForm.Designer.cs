@@ -34,8 +34,13 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.treeView_Tools = new System.Windows.Forms.TreeView();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this._webBrowser = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -86,21 +91,53 @@
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(205, 50);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(528, 455);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this._webBrowser);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(520, 429);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // _webBrowser
             // 
             this._webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._webBrowser.Location = new System.Drawing.Point(205, 50);
+            this._webBrowser.Location = new System.Drawing.Point(3, 3);
             this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this._webBrowser.Name = "_webBrowser";
-            this._webBrowser.Size = new System.Drawing.Size(528, 455);
-            this._webBrowser.TabIndex = 5;
+            this._webBrowser.Size = new System.Drawing.Size(514, 423);
+            this._webBrowser.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 527);
-            this.Controls.Add(this._webBrowser);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.treeView_Tools);
             this.Controls.Add(this.statusStrip1);
@@ -111,6 +148,8 @@
             this.Text = "Tool Plat";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +163,10 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.TreeView treeView_Tools;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.WebBrowser _webBrowser;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
