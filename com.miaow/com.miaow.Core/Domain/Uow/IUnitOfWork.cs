@@ -2,6 +2,7 @@
 {
     public interface IUnitOfWork
     {
-        void SaveChanges();
+        void BeginTransaction();
+        void Complete();
     }
 }
