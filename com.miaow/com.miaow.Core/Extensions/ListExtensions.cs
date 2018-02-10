@@ -10,12 +10,7 @@ namespace com.miaow.Core.Extensions
         {
             return list == null || !list.Any();
         }
-
-        public static bool IsNullOrEmpty(this IList list)
-        {
-            return list == null || list.Count == 0;
-        }
-
+        
         public static bool IsNullOrEmpty<T>(this IQueryable<T> queryable)
         {
             return queryable == null || !queryable.Any();

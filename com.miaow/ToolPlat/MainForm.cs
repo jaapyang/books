@@ -31,13 +31,18 @@ namespace ToolPlat
             #region Events
 
             this.Load += MainForm_Load;
-            //this.treeView_Tools.AfterSelect += TreeView_Tools_AfterSelect;
+            this.tabControl1.MouseDoubleClick += TabControl1_MouseDoubleClick;
 
             #endregion
 
             this._webBrowser.ObjectForScripting = this;
             this.treeView_Tools.HideSelection = false;
             ToolMapping.Init();
+        }
+
+        private void TabControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.tabControl1.TabPages.Remove(this.tabControl1.SelectedTab);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -49,6 +54,8 @@ namespace ToolPlat
             this.treeView_Tools.ExpandAll();
         }
 
+        #region Public Method
+        
         public void HandlerProcess(string handlerArgsStr)
         {
             HandlerProcess(handlerArgsStr, this.tabControl1.SelectedTab.Controls[0] as WebBrowser);
@@ -71,14 +78,7 @@ namespace ToolPlat
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void toolStripMenuItem_openInNewTab_Click(object sender, EventArgs e)
-        {
-            this.CurrentToolName = this.treeView_Tools.SelectedNode.Text;
-
-            AppendTabPageForTool(CurrentToolName);
-        }
-
+        
         public void AppendTabPageForTool(string currentToolName)
         {
             var viewPath = ToolMapping.GetViewPath(currentToolName);
@@ -95,7 +95,9 @@ namespace ToolPlat
             this.tabControl1.TabPages.Add(tabPage);
             this.tabControl1.SelectTab(tabPage);
         }
+        
 
+        #endregion
 
         private void treeView_Tools_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
@@ -105,6 +107,13 @@ namespace ToolPlat
             var viewPath = ToolMapping.GetViewPath(this.CurrentToolName);
             if (!(this.tabControl1.SelectedTab.Controls[0] is WebBrowser activeWebBrowser)) return;
             activeWebBrowser.Url = new Uri(viewPath.ViewPath);
+        }
+        
+        private void toolStripMenuItem_openInNewTab_Click(object sender, EventArgs e)
+        {
+            this.CurrentToolName = this.treeView_Tools.SelectedNode.Text;
+
+            AppendTabPageForTool(CurrentToolName);
         }
     }
 }

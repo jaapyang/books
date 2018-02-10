@@ -33,7 +33,9 @@
             <div class="row">
                 <span>
                     <a class="btn btn-info __load_novel_list" href="javascript:;">加载小说列表</a>
-                    <a class="btn btn-info __Parse_Chapter" href="javascript:;">解析章节</a>
+                </span>
+                <span>
+                    <a class="btn btn-info __update_chapters" href="javascript:;">更新所有小说章节</a>
                 </span>
             </div>
 
@@ -64,7 +66,7 @@
         function display_novel_list(args) {
 
             var novelList = JSON.parse(args);
-            //var el_novelList = $('.__novelList');
+
             show_message("收到小说列表数据." + novelList.length, "info");
 
             for (var i = 0; i < novelList.length; i++) {
@@ -96,7 +98,6 @@
         }
 
         function show_message(msg, style) {
-
             $('._error_message')
                 .append('<li class="text-' + style + '"><label>' + msg + '</label></li>');
 
@@ -106,7 +107,9 @@
 
         $(function () {
             $('body')
-           
+                .on('click','.__update_chapters',function() {
+                    Invoke('Update_all_novel_chapters', '');
+                })
                 .on('click', '.__update_novel', function () {
                     var url = $(this).attr('data-url');
                     Invoke('StartNewPage_Update_Novel', url);
@@ -115,9 +118,7 @@
                     var id = $(this).attr('data-id');
                     Invoke('Export_Novel', id);
                 })
-                .on('click',
-                '.__load_novel_list',
-                function () {
+                .on('click', '.__load_novel_list', function () {
                     Invoke("Load_novel_list", "");
                 });
         })

@@ -15,8 +15,7 @@
         <div class="row">
             <span>
                 Menu Url:<input type="text" class="__menu_url"/>
-                <a class="btn btn-info __menu_parse" href="javascript:;">开始解析</a>
-                <a class="btn btn-info __Parse_Chapter" href="javascript:;">解析章节</a>
+                <a class="btn btn-info __menu_parse" href="javascript:;">添加小说</a>
             </span>
         </div>
 
@@ -27,51 +26,6 @@
         </div>
         <div class="row">
             <ul class="_error_message">
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li class="text-danger">
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
-                <li>
-                    <label class="p">test</label>
-                </li>
             </ul>
         </div>
     </div>
@@ -111,18 +65,10 @@
 
     $(function() {
         $('body')
-            .on('click',
-                '.__Parse_Chapter',
-                function() {
-                    var url = $('.__menu_url').val();
-                    Invoke("Parse_All", url);
-                })
-            .on('click',
-                '.__menu_parse',
-                function() {
+            .on('click', '.__menu_parse', function() {
                     var url = $('.__menu_url').val();
                     Invoke("Parse_Menu_Url", url);
-                });
+            });
     })
 </script>
 </body>

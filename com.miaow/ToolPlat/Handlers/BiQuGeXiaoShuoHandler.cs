@@ -111,8 +111,6 @@ namespace ToolPlat.Handlers
 
                 service.Add(novelModel);
             }
-
-           
         }
 
         public void Parse_All(string url)

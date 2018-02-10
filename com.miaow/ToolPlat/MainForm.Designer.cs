@@ -40,7 +40,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this._webBrowser = new System.Windows.Forms.WebBrowser();
+            this.toolStripStatusLabel_process_status = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.contextMenuStrip_For_TreeView.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -72,6 +74,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_process_status});
             this.statusStrip1.Location = new System.Drawing.Point(0, 505);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(733, 22);
@@ -140,6 +144,11 @@
             this._webBrowser.Size = new System.Drawing.Size(514, 423);
             this._webBrowser.TabIndex = 0;
             // 
+            // toolStripStatusLabel_process_status
+            // 
+            this.toolStripStatusLabel_process_status.Name = "toolStripStatusLabel_process_status";
+            this.toolStripStatusLabel_process_status.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -156,6 +165,8 @@
             this.Text = "Tool Plat";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.contextMenuStrip_For_TreeView.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -177,6 +188,7 @@
         private System.Windows.Forms.WebBrowser _webBrowser;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_For_TreeView;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_openInNewTab;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_process_status;
     }
 }
 
