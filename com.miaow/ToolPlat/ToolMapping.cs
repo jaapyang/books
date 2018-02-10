@@ -8,10 +8,10 @@ namespace ToolPlat
 {
     public static class ToolMapping
     {
-        private static readonly Dictionary<string, ToolInfo> dic;
+        private static readonly Dictionary<string, ToolInfo> Dic;
         static ToolMapping()
         {
-            dic = new Dictionary<string, ToolInfo>();
+            Dic = new Dictionary<string, ToolInfo>();
         }
 
         public static void Init()
@@ -41,18 +41,18 @@ namespace ToolPlat
                     HandlerFullName = $"{handlerBaseNameSpace}.Handlers.{toolName}Handler"
                 };
 
-                dic.Add(toolName, toolInfo);
+                Dic.Add(toolName, toolInfo);
             }
         }
 
         public static string[] GetToolNames()
         {
-            return dic.Select(x => x.Key).ToArray();
+            return Dic.Select(x => x.Key).ToArray();
         }
 
         public static ToolInfo GetViewPath(string toolName)
         {
-            return dic[toolName];
+            return Dic[toolName];
         }
     }
 }

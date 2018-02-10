@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- basic styles -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="../css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../css/ace.min.css" />
+    <link rel="stylesheet" href="../css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="../css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+
+</head>
+<body style="background-color: #ffffff">
+    <div class="main-container">
+        <div class="page-content">
+            <div class="row">
+                <span>
+                    <a class="btn btn-info __load_novel_list" href="javascript:;">加载小说列表</a>
+                </span>
+                <span>
+                    <a class="btn btn-info __update_chapters" href="javascript:;">更新所有小说章节</a>
+                </span>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table table-bordered table-striped">
+                        <tbody class="__novelList"></tbody>
+                    </table>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <ul class="_error_message"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/typeahead-bs2.min.js"></script>
+    <script src="../Scripts/Json-2.js"></script>
+    <script src="../Scripts/ace.min.js"></script>
+    <script src="../Scripts/InvokeMethod.js"></script>
+    <script type="text/javascript">
+
+        function display_novel_list(args) {
+
+            var novelList = JSON.parse(args);
+
+            show_message("收到小说列表数据." + novelList.length, "info");
+
+            for (var i = 0; i < novelList.length; i++) {
+                var novelItem = novelList[i];
+                show_message("绑定:" + novelItem.NovelName, "info");
+                $('.__novelList').append(
+                    ' <tr>'
+                    + '	<td>'
+                    + '		<span class="lbl">'
+                    + '			<i class="icon-book bigger-130"></i>'
+                    + novelItem.NovelName
+                    + '		</span>'
+                    + '	</td>'
+                    + '	<td>'
+                    + '		<a class="btn btn-sm btn-info __update_novel" href="javascript:;" data-url="' + novelItem.MenuUrl + '">更新</a>'
+                    + '	</td>'
+                    + '	<td>'
+                    + '		<a href="javascript:;" class="btn btn-sm btn-info __export_novel" data-id="' + novelItem.Id + '">导出</a> '
+                    + '	</td><td id="_novel_' + novelItem.Id + '"></td>'
+                    + '</tr>'
+                );
+            }
+
+            show_message("绑定完成.", "info");
+        }
+
+        function show_process(id, msg, style) {
+            $('#_novel_' + id).html('<span class="text-' + style + '">' + msg + '<span>');
+        }
+
+        function show_message(msg, style) {
+            $('._error_message')
+                .append('<li class="text-' + style + '"><label>' + msg + '</label></li>');
+
+            $("html,body").stop(true);
+            $("html,body").animate({ scrollTop: $("._error_message>li:last").offset().top }, 1000);
+        }
+
+        $(function () {
+            $('body')
+                .on('click','.__update_chapters',function() {
+                    Invoke('Update_all_novel_chapters', '');
+                })
+                .on('click', '.__update_novel', function () {
+                    var url = $(this).attr('data-url');
+                    Invoke('StartNewPage_Update_Novel', url);
+                })
+                .on('click', '.__export_novel', function () {
+                    var id = $(this).attr('data-id');
+                    Invoke('Export_Novel', id);
+                })
+                .on('click', '.__load_novel_list', function () {
+                    Invoke("Load_novel_list", "");
+                });
+        })
+    </script>
+</body>
+</html>

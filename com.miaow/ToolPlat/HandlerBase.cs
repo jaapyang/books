@@ -1,27 +1,37 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace ToolPlat
 {
     public abstract class HandlerBase
     {
-        public IWebBowserForm ParentForm { get; private set; }
-
+        //public IWebBowserForm ParentForm { get; private set; }
+        protected WebBrowser CurrentBrowser { get; private set; }
         public HtmlDocument Document { get; }
 
-        public HandlerBase(IWebBowserForm parentBowserForm)
+        public HandlerBase(WebBrowser webBrowser)
         {
-            ParentForm = parentBowserForm;
-            this.Document = parentBowserForm.WebBrowser.Document;
+            CurrentBrowser = webBrowser;
+            this.Document = CurrentBrowser.Document;
         }
 
-        protected virtual void InvokeScriptFunction(string functionName, string argsJsonStr)
+        protected virtual void InvokeScriptFunction(string functionName, params object[] argsJsonStr)
         {
-            Document.InvokeScript(functionName, new[] {argsJsonStr});
+            CurrentBrowser.Invoke(new Action(() =>
+            {
+                Document.InvokeScript(functionName, argsJsonStr);
+            }));
         }
-    }
 
-    public interface IWebBowserForm
-    {
-        WebBrowser WebBrowser { get; }
+        protected virtual void InvokeScriptFunction(Action action)
+        {
+            CurrentBrowser.Invoke(action);
+        }
+
+        protected virtual void InvokeWindow(Action action)
+        {
+            CurrentBrowser.FindForm()?.Invoke(action);
+        }
     }
 }

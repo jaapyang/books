@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53404AF9-7AB0-4956-90DA-0F8B2B973F19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.miaow.DomainService.NovelDomainServices</RootNamespace>
+    <AssemblyName>com.miaow.DomainService.NovelDomainServices</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChapterDomainService.cs" />
+    <Compile Include="Migrations\201802081436331_Init_NovelDb.cs" />
+    <Compile Include="Migrations\201802081436331_Init_NovelDb.Designer.cs">
+      <DependentUpon>201802081436331_Init_NovelDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081506305_Add_PrimaryKey_For_NovelModels.cs" />
+    <Compile Include="Migrations\201802081506305_Add_PrimaryKey_For_NovelModels.Designer.cs">
+      <DependentUpon>201802081506305_Add_PrimaryKey_For_NovelModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802091411440_change_field_length.cs" />
+    <Compile Include="Migrations\201802091411440_change_field_length.Designer.cs">
+      <DependentUpon>201802091411440_change_field_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802091741327_add_fields_sortId_chapterCount.cs" />
+    <Compile Include="Migrations\201802091741327_add_fields_sortId_chapterCount.Designer.cs">
+      <DependentUpon>201802091741327_add_fields_sortId_chapterCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802100806583_update_content_length.cs" />
+    <Compile Include="Migrations\201802100806583_update_content_length.Designer.cs">
+      <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NovelDbContext.cs" />
+    <Compile Include="NovelDomainService.cs" />
+    <Compile Include="NovelUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.miaow.Core.EntityFramework\com.miaow.Core.EntityFramework.csproj">
+      <Project>{0132732C-010A-4E61-B6D3-CB10351D000E}</Project>
+      <Name>com.miaow.Core.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.miaow.Core\com.miaow.Core.csproj">
+      <Project>{524FDBA4-084F-4715-8464-659C678781DB}</Project>
+      <Name>com.miaow.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.miaow.Models.NovelModel\com.miaow.Models.NovelModel.csproj">
+      <Project>{81D286CA-5AD4-44A1-B9A7-6AF61434825E}</Project>
+      <Name>com.miaow.Models.NovelModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802081436331_Init_NovelDb.resx">
+      <DependentUpon>201802081436331_Init_NovelDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081506305_Add_PrimaryKey_For_NovelModels.resx">
+      <DependentUpon>201802081506305_Add_PrimaryKey_For_NovelModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091411440_change_field_length.resx">
+      <DependentUpon>201802091411440_change_field_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802091741327_add_fields_sortId_chapterCount.resx">
+      <DependentUpon>201802091741327_add_fields_sortId_chapterCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802100806583_update_content_length.resx">
+      <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
