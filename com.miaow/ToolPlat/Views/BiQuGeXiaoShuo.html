@@ -7,85 +7,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="../Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Css/ace.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
+<div class="main-container">
+    <div class="page-content">
         <div class="row">
             <span>
-                Menu Url:<input type="text" class="__menu_url" />
+                Menu Url:<input type="text" class="__menu_url"/>
                 <a class="btn btn-info __menu_parse" href="javascript:;">开始解析</a>
                 <a class="btn btn-info __Parse_Chapter" href="javascript:;">解析章节</a>
             </span>
         </div>
-        
+
         <div class="row">
             <table class="table __menu_list">
-               
+
             </table>
         </div>
         <div class="row">
             <ul class="_error_message">
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="p">test</label></li>
-                <li><label class="label label-danger" style="font-size: 18px;">testtttt</label></li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li class="text-danger">
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
+                <li>
+                    <label class="p">test</label>
+                </li>
             </ul>
         </div>
     </div>
+</div>
+<script src="../Scripts/jquery-1.10.2.min.js"></script>
+<script src="../Scripts/bootstrap.min.js"></script>
+<script src="../Scripts/typeahead-bs2.min.js"></script>
+<script src="../Scripts/Json-2.js"></script>
+<script src="../Scripts/ace.min.js"></script>
+<script src="../Scripts/InvokeMethod.js"></script>
+<script type="text/javascript">
 
-    <script src="../Scripts/jquery-1.10.2.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/Json-2.js"></script>
-    <script src="../Scripts/InvokeMethod.js"></script>
-    <script type="text/javascript">
+    function loadMenu(args) {
 
-        function loadMenu(args) {
-
-            var menuList = JSON.parse(args);
-            var menuTable = $('.__menu_list');
-            for (var i = 0; i < menuList.length; i++) {
-                $(menuTable).append("<tr>" +
-                    "<td><input type='checkbox' value='" + menuList[i].Url + "'/></td>" +
-                    "<td><a href='" + menuList[i].Url + "'>" + menuList[i].Title + "</a></td>" +
-                    "</tr>");
-            }
+        var menuList = JSON.parse(args);
+        var menuTable = $('.__menu_list');
+        for (var i = 0; i < menuList.length; i++) {
+            $(menuTable).append("<tr>" +
+                "<td><input type='checkbox' value='" + menuList[i].Url + "'/></td>" +
+                "<td><a href='" +
+                menuList[i].Url +
+                "'>" +
+                menuList[i].Title +
+                "</a></td>" +
+                "</tr>");
         }
+    }
 
-        function show_message(msg, style) {
-            
-            $('._error_message')
-                .append('<li><label class="label label-' + style +'"  style="font-size: 18px;">' + msg + '</label></li>');
-            
-            $("html,body").stop(true);
-            $("html,body").animate({ scrollTop: $("._error_message>li:last").offset().top }, 1000);
-        }
+    function show_message(msg, style) {
 
-        $(function () {
-            $('body')
-                .on('click', '.__Parse_Chapter', function () {
+        $('._error_message')
+            .append('<li class="text-' + style + '"><label>' + msg + '</label></li>');
+
+        $("html,body").stop(true);
+        $("html,body").animate({ scrollTop: $("._error_message>li:last").offset().top }, 1000);
+    }
+
+    $(function() {
+        $('body')
+            .on('click',
+                '.__Parse_Chapter',
+                function() {
                     var url = $('.__menu_url').val();
                     Invoke("Parse_All", url);
                 })
-
-                .on('click',
+            .on('click',
                 '.__menu_parse',
-                function () {
+                function() {
                     var url = $('.__menu_url').val();
                     Invoke("Parse_Menu_Url", url);
                 });
-        })
-    </script>
+    })
+</script>
 </body>
 </html>

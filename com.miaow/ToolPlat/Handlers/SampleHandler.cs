@@ -9,7 +9,7 @@ namespace ToolPlat.Handlers
 {
     public sealed class SampleHandler:HandlerBase
     {
-        public SampleHandler(IWebBowserForm parentBowserForm) : base(parentBowserForm)
+        public SampleHandler(WebBrowser webBrowser) : base(webBrowser)
         {
         }
         

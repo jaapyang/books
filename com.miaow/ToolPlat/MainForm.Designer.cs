@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.treeView_Tools = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip_For_TreeView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem_openInNewTab = new System.Windows.Forms.ToolStripMenuItem();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this._webBrowser = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip_For_TreeView.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -77,11 +80,27 @@
             // 
             // treeView_Tools
             // 
+            this.treeView_Tools.ContextMenuStrip = this.contextMenuStrip_For_TreeView;
             this.treeView_Tools.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeView_Tools.Location = new System.Drawing.Point(0, 50);
             this.treeView_Tools.Name = "treeView_Tools";
             this.treeView_Tools.Size = new System.Drawing.Size(202, 455);
             this.treeView_Tools.TabIndex = 3;
+            this.treeView_Tools.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_Tools_NodeMouseDoubleClick);
+            // 
+            // contextMenuStrip_For_TreeView
+            // 
+            this.contextMenuStrip_For_TreeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_openInNewTab});
+            this.contextMenuStrip_For_TreeView.Name = "contextMenuStrip_For_TreeView";
+            this.contextMenuStrip_For_TreeView.Size = new System.Drawing.Size(161, 26);
+            // 
+            // toolStripMenuItem_openInNewTab
+            // 
+            this.toolStripMenuItem_openInNewTab.Name = "toolStripMenuItem_openInNewTab";
+            this.toolStripMenuItem_openInNewTab.Size = new System.Drawing.Size(160, 22);
+            this.toolStripMenuItem_openInNewTab.Text = "在新标签中打开";
+            this.toolStripMenuItem_openInNewTab.Click += new System.EventHandler(this.toolStripMenuItem_openInNewTab_Click);
             // 
             // splitter1
             // 
@@ -94,7 +113,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(205, 50);
             this.tabControl1.Name = "tabControl1";
@@ -112,16 +130,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // _webBrowser
             // 
@@ -148,6 +156,7 @@
             this.Text = "Tool Plat";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip_For_TreeView.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -166,7 +175,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.WebBrowser _webBrowser;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_For_TreeView;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_openInNewTab;
     }
 }
 

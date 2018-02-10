@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B31694AD-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.miaow.Core.EntityFramework", "com.miaow.Core.EntityFramework\com.miaow.Core.EntityFramework.csproj", "{0132732C-010A-4E61-B6D3-CB10351D000E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.miaow.Dtos.NovelDto", "com.miaow.Dtos.NovelDto\com.miaow.Dtos.NovelDto.csproj", "{EE9CE4BE-9310-413E-B5E5-583D43975904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{0132732C-010A-4E61-B6D3-CB10351D000E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0132732C-010A-4E61-B6D3-CB10351D000E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0132732C-010A-4E61-B6D3-CB10351D000E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9CE4BE-9310-413E-B5E5-583D43975904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9CE4BE-9310-413E-B5E5-583D43975904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9CE4BE-9310-413E-B5E5-583D43975904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9CE4BE-9310-413E-B5E5-583D43975904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{81D286CA-5AD4-44A1-B9A7-6AF61434825E} = {17931EC6-F6A2-4D69-999F-9A261101E543}
 		{53404AF9-7AB0-4956-90DA-0F8B2B973F19} = {17931EC6-F6A2-4D69-999F-9A261101E543}
 		{0132732C-010A-4E61-B6D3-CB10351D000E} = {B31694AD-E2E2-436E-AE79-76D1EE5B4B10}
+		{EE9CE4BE-9310-413E-B5E5-583D43975904} = {17931EC6-F6A2-4D69-999F-9A261101E543}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {254F3674-A871-41D0-8AAA-97A1D453B344}

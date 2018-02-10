@@ -6,33 +6,32 @@ namespace ToolPlat
 {
     public abstract class HandlerBase
     {
-        public IWebBowserForm ParentForm { get; private set; }
-
+        //public IWebBowserForm ParentForm { get; private set; }
+        protected WebBrowser CurrentBrowser { get; private set; }
         public HtmlDocument Document { get; }
 
-        public HandlerBase(IWebBowserForm parentBowserForm)
+        public HandlerBase(WebBrowser webBrowser)
         {
-            ParentForm = parentBowserForm;
-            this.Document = parentBowserForm.WebBrowser.Document;
+            CurrentBrowser = webBrowser;
+            this.Document = CurrentBrowser.Document;
         }
 
-        protected virtual void InvokeScriptFunction(string functionName, string argsJsonStr)
+        protected virtual void InvokeScriptFunction(string functionName, params object[] argsJsonStr)
         {
-            ParentForm.WebBrowser.Invoke(new Action(() =>
+            CurrentBrowser.Invoke(new Action(() =>
             {
-                Document.InvokeScript(functionName, new[] { argsJsonStr });
+                Document.InvokeScript(functionName, argsJsonStr);
             }));
         }
 
         protected virtual void InvokeScriptFunction(Action action)
         {
-            ParentForm.WebBrowser.Invoke(action);
+            CurrentBrowser.Invoke(action);
         }
-    }
 
-    public interface IWebBowserForm
-    {
-        WebBrowser WebBrowser { get; }
-        string Text { get; set; }
+        protected virtual void InvokeWindow(Action action)
+        {
+            CurrentBrowser.FindForm()?.Invoke(action);
+        }
     }
 }

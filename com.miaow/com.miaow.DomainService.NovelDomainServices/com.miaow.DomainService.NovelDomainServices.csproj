@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201802091741327_add_fields_sortId_chapterCount.Designer.cs">
       <DependentUpon>201802091741327_add_fields_sortId_chapterCount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802100806583_update_content_length.cs" />
+    <Compile Include="Migrations\201802100806583_update_content_length.Designer.cs">
+      <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NovelDbContext.cs" />
     <Compile Include="NovelDomainService.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802091741327_add_fields_sortId_chapterCount.resx">
       <DependentUpon>201802091741327_add_fields_sortId_chapterCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802100806583_update_content_length.resx">
+      <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

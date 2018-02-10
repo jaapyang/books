@@ -18,7 +18,7 @@ namespace ToolPlat.Handlers
 {
     public class BiQuGeXiaoShuoHandler : HandlerBase
     {
-        public BiQuGeXiaoShuoHandler(IWebBowserForm parentBowserForm) : base(parentBowserForm)
+        public BiQuGeXiaoShuoHandler(WebBrowser webBrowser) : base(webBrowser)
         {
         }
 
@@ -44,7 +44,8 @@ namespace ToolPlat.Handlers
             var linkArray = document?.GetAllElements().Where(x => x.TagName() == "a").ToList();
             
             var novelName = document?.GetElementById("info").Children.First.Text();
-            var pattern = @"/\d+_\d+/\d+.html";
+
+            CurrentBrowser.Parent.Text = novelName;
 
             using (var uow = new NovelUnitOfWork())
             {
@@ -62,6 +63,7 @@ namespace ToolPlat.Handlers
                 novelModel.NovelName = novelName;
 
                 int chapterCount = 0;
+                var pattern = @"/\d+_\d+/\d+.html";
 
                 foreach (Element element in linkArray)
                 {
@@ -138,7 +140,7 @@ namespace ToolPlat.Handlers
                     string message = $"当前进度:{downloadCount}/{todoToal};正在下载 {chapterModel.Title}";
                     InvokeScriptFunction(() =>
                     {
-                        Document.InvokeScript("show_message", new[] { message, "info"});
+                        Document.InvokeScript("show_message", new[] { message, "success"});
                     });
                 }
             });

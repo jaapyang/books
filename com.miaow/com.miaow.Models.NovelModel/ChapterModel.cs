@@ -21,7 +21,7 @@ namespace com.miaow.Models.NovelModel
         [StringLength(200)]
         public string Url { get; set; }
 
-        [StringLength(10000)]
+        [MaxLength]
         public string Content { get; set; }
 
         public int SortId { get; set; }
