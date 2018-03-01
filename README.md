@@ -11,9 +11,11 @@
 - [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
 ## 编码规范
+- [c#调用python脚本](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
 - [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 
 ## C# / C# Core
+- [](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
 - [走进异步编程的世界](https://www.cnblogs.com/liqingwen/p/5831951.html)
 - [C#将WebBowser控件替换为Chrome内核](https://www.cnblogs.com/lonelyxmas/p/6209261.html)
 - [C#中winform窗体如何嵌入cmd命令窗口](https://www.cnblogs.com/xuliangxing/p/5993297.html)
