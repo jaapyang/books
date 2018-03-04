@@ -71,26 +71,24 @@
 
             for (var i = 0; i < novelList.length; i++) {
                 var novelItem = novelList[i];
-                show_message("绑定:" + novelItem.NovelName, "info");
+                //show_message("绑定:" + novelItem.NovelName, "info");
                 $('.__novelList').append(
                     ' <tr>'
                     + '	<td>'
-                    + '		<span class="lbl">'
-                    + '			<i class="icon-book bigger-130"></i>'
-                    + novelItem.NovelName
-                    + '		</span>'
+                    + '		<a href="javascript:;" class="btn btn-sm btn-info __novel_menu_detial" data-id="' + novelItem.Id + '">' + novelItem.NovelName+'</a>'
                     + '	</td>'
                     + '	<td>'
                     + '		<a class="btn btn-sm btn-info __update_novel" href="javascript:;" data-url="' + novelItem.MenuUrl + '">更新</a>'
                     + '	</td>'
                     + '	<td>'
-                    + '		<a href="javascript:;" class="btn btn-sm btn-info __export_novel" data-id="' + novelItem.Id + '">导出</a> '
-                    + '	</td><td id="_novel_' + novelItem.Id + '"></td>'
+                    + '		<a href="javascript:;" class="btn btn-sm btn-info __export_novel_last_chapters" data-id="' + novelItem.Id + '">导出最近十章</a> '
+                    + '	</td>'
+                    + '	<td>'
+                    + '		<a href="javascript:;" class="btn btn-sm btn-info __export_novel" data-id="' + novelItem.Id + '">全本导出</a> '
+                    + '	</td>'
                     + '</tr>'
                 );
             }
-
-            show_message("绑定完成.", "info");
         }
 
         function show_process(id, msg, style) {
@@ -107,17 +105,26 @@
 
         $(function () {
             $('body')
+                // 打开新标签，显示小说目录详情
+                .on('click', '.__novel_menu_detial', function () {
+                    var novelId = $(this).attr('data-id');
+                    Start_New_Tag("NovelMenuDetial", "Show_Menu_Detail", novelId);
+                })
+                // 更新所有小说章节
                 .on('click','.__update_chapters',function() {
                     Invoke('Update_all_novel_chapters', '');
                 })
-                .on('click', '.__update_novel', function () {
-                    var url = $(this).attr('data-url');
-                    Invoke('StartNewPage_Update_Novel', url);
-                })
+                // 导出小说
                 .on('click', '.__export_novel', function () {
                     var id = $(this).attr('data-id');
                     Invoke('Export_Novel', id);
                 })
+                // 导出最后10章
+                .on('click', '.__export_novel_last_chapters', function() {
+                    var id = $(this).attr('data-id');
+                    Invoke('Export_novel_last_chapters', id);
+                })
+                // 加载小说列表
                 .on('click', '.__load_novel_list', function () {
                     Invoke("Load_novel_list", "");
                 });

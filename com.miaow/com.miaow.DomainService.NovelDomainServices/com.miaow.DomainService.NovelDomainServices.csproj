@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201802100806583_update_content_length.Designer.cs">
       <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802101413135_add_lastupdatetime_for_novel.cs" />
+    <Compile Include="Migrations\201802101413135_add_lastupdatetime_for_novel.Designer.cs">
+      <DependentUpon>201802101413135_add_lastupdatetime_for_novel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NovelDbContext.cs" />
     <Compile Include="NovelDomainService.cs" />
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802100806583_update_content_length.resx">
       <DependentUpon>201802100806583_update_content_length.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802101413135_add_lastupdatetime_for_novel.resx">
+      <DependentUpon>201802101413135_add_lastupdatetime_for_novel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

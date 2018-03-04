@@ -61,6 +61,7 @@ namespace ToolPlat.Handlers
                 
                 novelModel.MenuUrl = url;
                 novelModel.NovelName = novelName;
+                novelModel.LastUpdateTime = DateTime.Now;
 
                 int chapterCount = 0;
                 var pattern = @"/\d+_\d+/\d+.html";

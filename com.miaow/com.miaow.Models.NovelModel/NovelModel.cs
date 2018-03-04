@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using com.miaow.Core.Domain.Entities;
@@ -19,6 +20,8 @@ namespace com.miaow.Models.NovelModel
         public string MenuUrl { get; set; }
         
         public int MaxChapterIndex { get; set; }
+
+        public DateTime LastUpdateTime { get; set; }
 
         public virtual List<ChapterModel> Chapters { get; set; }
 

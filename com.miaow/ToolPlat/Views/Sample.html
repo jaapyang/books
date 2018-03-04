@@ -12,6 +12,8 @@
     <div class="container">
         <div class="row">
             <a href="javascript:;" class="btn btn-sm btn-info __btn_test">Test</a>
+            <a href="javascript:;" class="btn btn-sm btn-info __btn_start_new_tag">Start new tag</a>
+            <a href="javascript:;" class="btn btn-sm btn-info _btn_novel_detials">Display novel detial</a>
         </div>
     </div>
 
@@ -27,11 +29,15 @@
 
         $(function() {
             $('body')
-                .on('click',
-                    '.__btn_test',
-                    function() {
+                .on('click','._btn_novel_detials',function() {
+                    Start_New_Tag('NovelMenuDetial', "Show_Menu_Detail", "1024");
+                })
+                .on('click','.__btn_start_new_tag',function() {
+                    Start_New_Tag("Sample", "ShowMessage", "new tag!");
+                })
+                .on('click','.__btn_test',function() {
                         Invoke("ShowMessage", "hello world!");
-                    });
+                });
         })
     </script>
 </body>

@@ -6814,3 +6814,9 @@ td.visible-print {
     display: none !important;
   }
 }
+
+dl{float:left}
+dl dd {
+    margin: 20px;
+    float: left;
+}

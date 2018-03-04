@@ -14,11 +14,6 @@ namespace com.miaow.Core.EntityFramework
         protected EntityFrameworkRepositoryBase(EfUnitOfWork uow) : base(uow)
         {
         }
-
-        public override TEntity GetById(int id)
-        {
-            return GetAll().FirstOrDefault(x => x.Id == id);
-        }
     }
 
     public abstract class EntityFrameworkRepositoryBase<TDbContext, TPrimaryKey, TEntity>
@@ -53,7 +48,14 @@ namespace com.miaow.Core.EntityFramework
         {
             _dbContext.Set<TEntity>().Remove(entity);
         }
-        
+
+        public override void Remove(TPrimaryKey id)
+        {
+            var entity = FirstOrDefault(id);
+            if (entity == null) return;
+            _dbContext.Set<TEntity>().Remove(entity);
+        }
+
         public override void Update(Func<TEntity, bool> filterPredicate, Action<TEntity> updateAction)
         {
             _dbContext.Set<TEntity>().Where(filterPredicate).AsQueryable().ForEachAsync(updateAction);

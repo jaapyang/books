@@ -15,7 +15,7 @@ namespace ToolPlat
             CurrentBrowser = webBrowser;
             this.Document = CurrentBrowser.Document;
         }
-
+        
         protected virtual void InvokeScriptFunction(string functionName, params object[] argsJsonStr)
         {
             CurrentBrowser.Invoke(new Action(() =>

@@ -55,7 +55,7 @@ namespace ToolPlat
         }
 
         #region Public Method
-        
+
         public void HandlerProcess(string handlerArgsStr)
         {
             HandlerProcess(handlerArgsStr, this.tabControl1.SelectedTab.Controls[0] as WebBrowser);
@@ -68,8 +68,8 @@ namespace ToolPlat
                 var requestMethodArgs = JsonConvert.DeserializeObject<RequestMethodArgs>(handlerArgsStr);
 
                 var t = Type.GetType(ToolMapping.GetViewPath(this.CurrentToolName).HandlerFullName);
-                var handler =
-                    Activator.CreateInstance(t ?? throw new InvalidOperationException($"未找到{CurrentToolName}Handler."),
+                var handler = Activator.CreateInstance(
+                        t ?? throw new InvalidOperationException($"未找到{CurrentToolName}Handler."),
                         currentWebBrowser);
                 t.GetMethod(requestMethodArgs.MethodName)?.Invoke(handler, new[] { requestMethodArgs.ArgsJsonStr });
             }
@@ -78,10 +78,21 @@ namespace ToolPlat
                 MessageBox.Show(ex.Message);
             }
         }
-        
-        public void AppendTabPageForTool(string currentToolName)
+
+        public void StartNewHandler(string toolName, string handlerArgs)
         {
-            var viewPath = ToolMapping.GetViewPath(currentToolName);
+            var webBrowser = AppendTabPageForTool(toolName);
+            webBrowser.DocumentCompleted += (sender, args) =>
+            {
+                //MessageBox.Show("he.....");
+                HandlerProcess(handlerArgs, webBrowser);
+            };
+        }
+
+        public WebBrowser AppendTabPageForTool(string currentToolName)
+        {
+            this.CurrentToolName = currentToolName;
+            var viewPath = ToolMapping.GetViewPath(CurrentToolName);
             var webBrowser = new WebBrowser
             {
                 ObjectForScripting = this,
@@ -94,8 +105,9 @@ namespace ToolPlat
 
             this.tabControl1.TabPages.Add(tabPage);
             this.tabControl1.SelectTab(tabPage);
+
+            return webBrowser;
         }
-        
 
         #endregion
 
@@ -108,7 +120,7 @@ namespace ToolPlat
             if (!(this.tabControl1.SelectedTab.Controls[0] is WebBrowser activeWebBrowser)) return;
             activeWebBrowser.Url = new Uri(viewPath.ViewPath);
         }
-        
+
         private void toolStripMenuItem_openInNewTab_Click(object sender, EventArgs e)
         {
             this.CurrentToolName = this.treeView_Tools.SelectedNode.Text;

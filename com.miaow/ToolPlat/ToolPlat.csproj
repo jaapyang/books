@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HandlerInitArgs.cs" />
+    <Compile Include="Handlers\NovelMenuDetialHandler.cs" />
     <Compile Include="RequestMethodArgs.cs" />
     <Compile Include="HandlerBase.cs" />
     <Compile Include="Handlers\BiQuGeXiaoShuoHandler.cs" />
@@ -339,6 +340,9 @@
     </Content>
     <Content Include="Scripts\x-editable\bootstrap-editable.min.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\NovelMenuDetial.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\NovelList.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

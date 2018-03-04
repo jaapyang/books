@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- basic styles -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="../css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <!-- ace styles -->
+
+    <link rel="stylesheet" href="../css/ace.min.css" />
+    <link rel="stylesheet" href="../css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../css/ace-skins.min.css" />
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="../css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    
+</head>
+<body style="background-color: #ffffff">
+    <div class="main-container">
+        <div class="page-content">
+
+            <div class="row">
+                <dl class="__menu_list">
+                </dl>
+            </div>
+            <div class="row">
+                <ul class="_error_message"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/typeahead-bs2.min.js"></script>
+    <script src="../Scripts/Json-2.js"></script>
+    <script src="../Scripts/ace.min.js"></script>
+    <script src="../Scripts/InvokeMethod.js"></script>
+    <script type="text/javascript">
+        function init_menu_list(menuListArgs) {
+            //alert(menuListArgs);
+            var menuList = JSON.parse(menuListArgs);
+            var el_menuList = $('.__menu_list');
+
+            for (var i = 0; i < menuList.length; i++) {
+                var menuItem = menuList[i];
+                $(el_menuList).append('<dd><a href="javascript:;" data-id="' +
+                    menuItem.Id+'">' +
+                    menuItem.Title+'</a></dd>');
+            }
+        }
+
+        function show_hello(args) {
+            alert(args);
+        }
+
+        function show_message(msg, style) {
+            $('._error_message')
+                .append('<li class="text-' + style + '"><label>' + msg + '</label></li>');
+
+            $("html,body").stop(true);
+            $("html,body").animate({ scrollTop: $("._error_message>li:last").offset().top }, 1000);
+        }
+
+        $(function () {
+
+
+
+            //$('body')
+            //    .on('click', '.__update_chapters', function () {
+            //        Invoke('Update_all_novel_chapters', '');
+            //    });
+        })
+    </script>
+</body>
+</html>

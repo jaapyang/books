@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using com.miaow.Core.Extensions;
 using com.miaow.DomainService.NovelDomainServices;
@@ -28,13 +30,13 @@ namespace ToolPlat.Handlers
             using (var uow = new NovelUnitOfWork())
             {
                 var service = new NovelDomainService(uow);
-                novelList = service.GetAll().Select(x => new NovelDto
+                novelList = Task.FromResult(service.GetAll().OrderByDescending(x => x.Id).Select(x => new NovelDto
                 {
                     Id = x.Id,
                     MaxChapterIndex = x.MaxChapterIndex,
                     MenuUrl = x.MenuUrl,
                     NovelName = x.NovelName
-                }).ToList();
+                })).Result.ToList();
             }
 
             InvokeScriptFunction("display_novel_list", novelList.ToJson());
@@ -45,7 +47,12 @@ namespace ToolPlat.Handlers
             ThreadPool.QueueUserWorkItem(state => { Export_Novel_By_Thread(args); });
         }
 
-        public void Export_Novel_By_Thread(string args)
+        public void Export_novel_last_chapters(string args)
+        {
+            ThreadPool.QueueUserWorkItem(state => { Export_Novel_By_Thread(args, 10); });
+        }
+
+        public void Export_Novel_By_Thread(string args,int exportCount = 0)
         {
             var novelId = int.Parse(args);
 
@@ -91,10 +98,19 @@ namespace ToolPlat.Handlers
                 File.Delete(filePath);
             }
 
-            using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-            using (var sw = new StreamWriter(fileStream))
+            var exportQuery = novelModel.Chapters.OrderBy(x => x.SortId).ThenBy(x => x.Id).AsEnumerable();
+            if (exportCount > 0)
             {
-                foreach (var chapterModel in novelModel.Chapters.OrderBy(x => x.SortId).ThenBy(x => x.Id))
+                var today = DateTime.Now;
+                filePath = Path.Combine(dirPath, $"{novelModel.NovelName}_{today.Year}{today.Month}{today.Day}.txt");
+                exportQuery = exportQuery.Skip(novelModel.Chapters.Count - exportCount);
+            }
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+            using (var sw = new StreamWriter(fileStream,Encoding.UTF8))
+            {
+                
+                foreach (var chapterModel in exportQuery.ToList())
                 {
                     sw.WriteLine("\n\n");
                     sw.WriteLine(chapterModel.Title);
@@ -143,6 +159,11 @@ namespace ToolPlat.Handlers
                         Document.InvokeScript("show_process", new[] { chapterModel.NovelId.ToString(), message, "success" });
                     });
                 }
+
+                InvokeScriptFunction(() =>
+                {
+                    Document.InvokeScript("show_process", new[] { novelModel.Id.ToString(), "更新完成.", "success" });
+                });
             });
             t.Start();
         }
@@ -188,28 +209,46 @@ namespace ToolPlat.Handlers
 
         public void Update_all_novel_chapters(string args)
         {
+            ThreadPool.QueueUserWorkItem(state =>
+            {
+                Update_all_novel_chapters_byThread(args);
+            });
+        }
+
+        public void Update_all_novel_chapters_byThread(string args)
+        {
             using (var uow = new NovelUnitOfWork())
             {
                 var novelService = new NovelDomainService(uow);
 
                 var novelList = novelService.GetAll().Include(x => x.Chapters).ToList();
 
-                InvokeScriptFunction("display_novel_list", novelList.Select(x => new NovelDto
+                InvokeScriptFunction("display_novel_list", novelList.OrderByDescending(x=>x.Id).Select(x => new NovelDto
                 {
                     Id = x.Id,
                     MaxChapterIndex = x.MaxChapterIndex,
                     MenuUrl = x.MenuUrl,
                     NovelName = x.NovelName
                 }).ToList().ToJson());
-
+                
                 foreach (var novelModel in novelList)
                 {
                     if (novelModel.Chapters.IsNullOrEmpty()) novelModel.Chapters = new List<ChapterModel>();
 
+                    novelModel.LastUpdateTime = DateTime.Now;
                     var chapterDtoList = Get_ChapterList(novelModel);
 
-                    if (chapterDtoList.IsNullOrEmpty()) continue;
-
+                    if (chapterDtoList.IsNullOrEmpty())
+                    {
+                        InvokeScriptFunction(() =>
+                        {
+                            Document.InvokeScript(
+                                "show_process",
+                                new[] { novelModel.Id.ToString(), "暂无更新", "success" });
+                        });
+                        continue;
+                    }
+                    
                     novelModel.Chapters.AddRange(chapterDtoList.Select(x => new ChapterModel
                     {
                         LastUpdatedTime = DateTime.Now,
@@ -218,7 +257,7 @@ namespace ToolPlat.Handlers
                         Url = x.Url
                     }));
 
-                    novelModel.MaxChapterIndex = novelModel.Chapters.Count;
+                    novelModel.MaxChapterIndex = novelModel.Chapters.Max(x=>x.SortId);
 
                     InvokeScriptFunction(() =>
                     {
@@ -229,7 +268,7 @@ namespace ToolPlat.Handlers
                 }
             }
         }
-
+        
         private List<ChapterDto> Get_ChapterList(NovelModel novelModel)
         {
             Document document;
@@ -287,5 +326,6 @@ namespace ToolPlat.Handlers
                 InvokeScriptFunction(() => { Document.InvokeScript("show_message", new[] {ex.Message, "danger"}); });
             }
         }
+        
     }
 }
