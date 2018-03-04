@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using com.miaow.Core;
+using com.miaow.Core.Extensions;
 using com.miaow.DomainService.NovelDomainServices;
 using com.miaow.Models.NovelModel;
 using Newtonsoft.Json;
@@ -99,12 +100,12 @@ namespace ToolPlat.Handlers
                     });
                 }
 
-                var argsStr = JsonConvert.SerializeObject(novelModel.Chapters.Where(x => x.Id <= 0)
+                var argsStr = novelModel.Chapters.Where(x => x.Id <= 0)
                     .OrderBy(x => x.SortId).Select(x => new
                     {
                         x.Url,
                         x.Title
-                    }).ToList());
+                    }).ToList().ToJson();
 
                 InvokeScriptFunction("loadMenu", argsStr);
 

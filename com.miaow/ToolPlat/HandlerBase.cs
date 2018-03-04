@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using com.miaow.Core.Extensions;
 
 namespace ToolPlat
 {
@@ -14,13 +15,19 @@ namespace ToolPlat
         {
             CurrentBrowser = webBrowser;
             this.Document = CurrentBrowser.Document;
+            CurrentBrowser.DocumentCompleted += CurrentBrowser_DocumentCompleted;
         }
-        
-        protected virtual void InvokeScriptFunction(string functionName, params object[] argsJsonStr)
+
+        protected virtual void CurrentBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        protected virtual void InvokeScriptFunction(string functionName, string argsJsonStr)
         {
             CurrentBrowser.Invoke(new Action(() =>
             {
-                Document.InvokeScript(functionName, argsJsonStr);
+                Document.InvokeScript(functionName, new object[]{ argsJsonStr } );
             }));
         }
 

@@ -6818,5 +6818,7 @@ td.visible-print {
 dl{float:left}
 dl dd {
     margin: 20px;
+    width: 180px;
     float: left;
+    white-space: nowrap;
 }

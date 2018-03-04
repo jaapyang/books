@@ -15,7 +15,7 @@ namespace ToolPlat.Handlers
         
         public void ShowMessage(string arg)
         {
-            MessageBox.Show(arg);
+            //MessageBox.Show(arg);
             InvokeScriptFunction("sayHello","hello paul;");
         }
     }

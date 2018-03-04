@@ -86,6 +86,7 @@
                     + '	<td>'
                     + '		<a href="javascript:;" class="btn btn-sm btn-info __export_novel" data-id="' + novelItem.Id + '">全本导出</a> '
                     + '	</td>'
+                    + '	</td><td id="_novel_' + novelItem.Id + '"></td>'
                     + '</tr>'
                 );
             }
@@ -118,6 +119,11 @@
                 .on('click', '.__export_novel', function () {
                     var id = $(this).attr('data-id');
                     Invoke('Export_Novel', id);
+                })
+                // 更新指定小说章节
+                .on('click', '.__update_novel', function () {
+                    var url = $(this).attr('data-url');
+                    Invoke('StartNewPage_Update_Novel', url);
                 })
                 // 导出最后10章
                 .on('click', '.__export_novel_last_chapters', function() {

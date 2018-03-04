@@ -25,16 +25,21 @@
     <![endif]-->
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
-    
+    <style>
+        .chapter-content {
+            font-size: 16px;
+            font-family: 微软雅黑;
+            width: 85%;
+            letter-spacing: 0.2em;
+        }
+    </style>
 </head>
 <body style="background-color: #ffffff">
     <div class="main-container">
         <div class="page-content">
 
-            <div class="row">
-                <ul class="col-md-9 __menu_list">
-                </ul>
-            </div>
+            <p class="chapter-content _chapter_content">
+            </p>
             <div class="row">
                 <ul class="_error_message">
                     <li>sssss</li>
@@ -49,24 +54,10 @@
     <script src="../Scripts/ace.min.js"></script>
     <script src="../Scripts/InvokeMethod.js"></script>
     <script type="text/javascript">
-        function init_menu_list(menuListArgs) {
-            //alert(menuListArgs);
-            var menuList = JSON.parse(menuListArgs);
-            var el_menuList = $('.__menu_list');
-
-            for (var i = 0; i < menuList.length; i++) {
-                var menuItem = menuList[i];
-                //alert(menuItem.Id);
-                $(el_menuList).append('<li class="col-md-3"><a href="javascript:;" class="__chapter_detail" data-id="' +
-                    menuItem.Id+'">' +
-                    menuItem.Title+'</a></li>');
-            }
+        function load_chapter_content(args) {
+            $('._chapter_content').html(args);
         }
-
-        function show_hello(args) {
-            init_menu_list(args);
-        }
-
+        
         function show_message(msg, style) {
             $('._error_message')
                 .append('<li class="text-' + style + '"><label>' + msg + '</label></li>');
@@ -76,13 +67,7 @@
         }
 
         $(function () {
-            $('body')
-                .on('click', '.__chapter_detail', function () {
-                    var currentElement = $(this);
-                    $(currentElement).attr("style", "color:red;");
-                    var chapterId = $(currentElement).attr("data-id");
-                    Start_New_Tag("ChapterDetail", "Load_Chapter_Detail", chapterId);
-                });
+            
         })
     </script>
 </body>

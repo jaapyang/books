@@ -82,11 +82,13 @@ namespace ToolPlat
         public void StartNewHandler(string toolName, string handlerArgs)
         {
             var webBrowser = AppendTabPageForTool(toolName);
+            webBrowser.Tag = handlerArgs;
             webBrowser.DocumentCompleted += (sender, args) =>
             {
                 //MessageBox.Show("he.....");
                 HandlerProcess(handlerArgs, webBrowser);
             };
+            //HandlerProcess(handlerArgs, webBrowser);
         }
 
         public WebBrowser AppendTabPageForTool(string currentToolName)
