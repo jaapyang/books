@@ -25,6 +25,7 @@
 - [Restful风格wcf调用](http://www.cnblogs.com/wolf-sun/p/4550152.html)
 - [Restful风格wcf调用2——增删改查](http://www.cnblogs.com/wolf-sun/p/4556301.html)
 - [Restful风格wcf调用3——Stream](http://www.cnblogs.com/wolf-sun/p/4557057.html)
+- [Restful风格wcf调用4——权限认证](http://www.cnblogs.com/wolf-sun/p/4572591.html)
 
 
 ## C# / C# Core
