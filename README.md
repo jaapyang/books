@@ -15,6 +15,11 @@
 - [c#调用python脚本](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
 - [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
 
+## WCF
+- [WCF学习之旅——第一个WCF示例（一）](http://www.cnblogs.com/chillsrc/p/5261605.html)
+- [WCF学习之旅——第一个WCF示例（二）](http://www.cnblogs.com/chillsrc/p/5275543.html)
+- [WCF学习之旅——第一个WCF示例（三）](http://www.cnblogs.com/chillsrc/p/5304913.html)
+
 ## C# / C# Core
 - [ASP.NET WebApi 实现Token验证](http://www.cnblogs.com/dukang1991/p/5627584.html)
 - [c#调用python脚本](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
