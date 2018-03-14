@@ -22,6 +22,7 @@
 - [WCF学习之旅—WCF概述（四）](http://www.cnblogs.com/chillsrc/p/5345456.html)
 - [WCF学习之旅—WCF第二个示例（五）](http://www.cnblogs.com/chillsrc/p/5382337.html)
 - [[WCF权限控制]WCF自定义授权体系详解[实例篇]](http://www.cnblogs.com/artech/archive/2011/07/11/2103445.html)
+- [Restful风格wcf调用](http://www.cnblogs.com/wolf-sun/p/4550152.html)
 
 ## C# / C# Core
 - [ASP.NET WebApi 实现Token验证](http://www.cnblogs.com/dukang1991/p/5627584.html)
