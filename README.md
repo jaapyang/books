@@ -27,6 +27,8 @@
 - [Restful风格wcf调用3——Stream](http://www.cnblogs.com/wolf-sun/p/4557057.html)
 - [Restful风格wcf调用4——权限认证](http://www.cnblogs.com/wolf-sun/p/4572591.html)
 
+## MySql
+- [mysql cmd 常用命令](https://www.cnblogs.com/liuzhenguo/p/7094437.html)
 
 ## C# / C# Core
 - [UowMVC轻量级框架](https://github.com/night-king/UowMVC)
