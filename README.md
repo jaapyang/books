@@ -11,6 +11,7 @@
 - [Pycharm快捷键](http://www.cnblogs.com/zhangpengshou/p/3555767.html)
 
 ## 编码规范
+- [十倍效能提升——Web 基础研发体系的建立](https://www.cnblogs.com/sskyy/p/8613393.html)
 - [C# 大文件分段上传，下载](http://blog.csdn.net/u010279498/article/details/60767638)
 - [c#调用python脚本](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
 - [通过分析github代码库总结出来的工程师代码书写习惯](http://alloyteam.github.io/CodeGuide/)
