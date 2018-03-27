@@ -34,6 +34,7 @@
 - [使用EF6 code first 方式连接MySQL总结](https://www.cnblogs.com/summit7ca/p/5423637.html)
 
 ## C# / C# Core
+- [How ASP.NET Web API 2.0 Works?](http://www.cnblogs.com/artech/p/how-asp-net-web-api-works.html)
 - [UowMVC轻量级框架](https://github.com/night-king/UowMVC)
 - [ASP.NET WebApi 实现Token验证](http://www.cnblogs.com/dukang1991/p/5627584.html)
 - [c#调用python脚本](https://www.cnblogs.com/shiyingzheng/p/6054835.html)
