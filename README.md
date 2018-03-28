@@ -53,7 +53,9 @@
 ## [Python](python.md)
 
 - [python 模拟登录相关参考文章](python_fake_login.md)
-- 
+
+## Javascript
+- [JavaScript单元测试框架：Jasmine](https://www.cnblogs.com/leolovexx/p/6598875.html)
 
 ## 微信小程序
 - [微信小程序基础入门](http://www.cnblogs.com/micua/p/wechat-weapp-essential.html)
