@@ -56,6 +56,7 @@
 
 ## Javascript
 - [JavaScript单元测试框架：Jasmine](https://www.cnblogs.com/leolovexx/p/6598875.html)
+- [Qunit](https://www.cnblogs.com/nuaalfm/archive/2010/02/26/1674235.html)
 
 ## 微信小程序
 - [微信小程序基础入门](http://www.cnblogs.com/micua/p/wechat-weapp-essential.html)
