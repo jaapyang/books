@@ -58,6 +58,7 @@
 - [JavaScript单元测试框架：Jasmine](https://www.cnblogs.com/leolovexx/p/6598875.html)
 - [Qunit](https://www.cnblogs.com/nuaalfm/archive/2010/02/26/1674235.html)
 - [javascript单元测试之框架推荐](http://www.cnblogs.com/kaima/archive/2009/04/09/javascritp_unittest.html)
+- [jasmine行为驱动,测试先行](http://blog.fens.me/nodejs-jasmine-bdd/)
 
 ## 微信小程序
 - [微信小程序基础入门](http://www.cnblogs.com/micua/p/wechat-weapp-essential.html)
