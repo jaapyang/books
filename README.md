@@ -77,6 +77,7 @@
 - [智能硬件的设计开发流程是什么样呢？](https://www.zhihu.com/question/27639394)
 
 ## RabbitMQ
+- [RabbitMQ安装与配置](https://www.cnblogs.com/PatrickLiu/p/6841132.html)
 - [学习笔记](RabbitMQ.md)
 - [缓存、队列（Memcached、redis、RabbitMQ)](http://www.cnblogs.com/suoning/p/5807247.html)
 - [一个winform带你玩转rabbitMQ](http://www.cnblogs.com/dubing/p/4017613.html)
