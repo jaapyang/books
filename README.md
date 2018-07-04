@@ -1,6 +1,8 @@
 # books
 日常学习资料或者文章收集
 
+**重要:[如何在 2 分钟内入睡(二战时期美国飞行员训练法)](https://zhuanlan.zhihu.com/p/34952593)**
+
 - [另一个收集IT书籍的库,感谢justjavac](https://github.com/justjavac/free-programming-books-zh_CN)
 - [python相关](python.md)
 - [Docker相关](Docker.md)
