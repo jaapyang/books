@@ -34,6 +34,7 @@
 ## Mysql for C#
 - [MySQL Connector/Net Developer Guide](https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework60.html)
 - [使用EF6 code first 方式连接MySQL总结](https://www.cnblogs.com/summit7ca/p/5423637.html)
+- [Entity Framework(EF的Model First方法)](https://www.cnblogs.com/DrHao/p/5367196.html)
 
 ## C# / C# Core
 - [abp 文档目录(博客园)](https://www.cnblogs.com/kid1412/p/AbpDocumentContent.html)
