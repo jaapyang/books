@@ -1,6 +1,7 @@
 # books
 日常学习资料或者文章收集
 
+
 **重要:[如何在 2 分钟内入睡(二战时期美国飞行员训练法)](https://zhuanlan.zhihu.com/p/34952593)**
 
 - [另一个收集IT书籍的库,感谢justjavac](https://github.com/justjavac/free-programming-books-zh_CN)
@@ -16,6 +17,7 @@
 
 ## SSIS
 - [SSIS教程](http://www.cnblogs.com/Niko12230/p/5729748.html)
+- [**BIWORK 的微软 BI 博客**](https://ask.hellobi.com/blog/biwork)
 
 ## 编码规范
 - [十倍效能提升——Web 基础研发体系的建立](https://www.cnblogs.com/sskyy/p/8613393.html)
